@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hope Connect Foundation</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #e0e0e0;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(27, 94, 32, 0.9);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .header-content img {
+      height: 80px;
+      max-width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(46, 125, 50, 0.9);
+      padding: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      margin: 8px 16px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc80;
+    }
+
+    .hero {
+      background: rgba(0, 0, 0, 0.6);
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #ff5252;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 15px;
+    }
+
+    ul li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    .contact-form button {
+      background-color: #ff5252;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .contact-form button:hover {
+      background-color: #ff7961;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background-color: rgba(27, 94, 32, 0.9);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="HopeConnect Foundation Logo">
+      <div>
+        <h1 style="margin: 0;">Hope Connect Foundation</h1>
+        <p style="margin: 5px 0;">Bringing Communities Together Through Purpose</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="about.html"><i class="fas fa-users"></i> About</a>
+    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a>
+    <a href="get-involved.html"><i class="fas fa-hands-helping"></i> Get Involved</a>
+    <a href="gallery.html"><i class="fas fa-image"></i> Gallery</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Stronger Together — Join the Movement</h1>
+  </section>
+ 
+  <section class="section" style="text-align: center;">
+    <img src="help.jpg" alt="Community gathering photo showing people uniting">
+    <p style="margin-top: 20px;">Together, we can turn compassion into practical action and create stronger communities.</p>
+    <p>
+      <a href="get-involved.html" style="display:inline-block; margin:8px; padding:12px 20px; background:#ffcc80; color:#222; text-decoration:none; border-radius:6px; font-weight:bold;">Volunteer With Us</a>
+      <a href="projects.html" style="display:inline-block; margin:8px; padding:12px 20px; background:#333; color:#fff; text-decoration:none; border-radius:6px; font-weight:bold;">Explore Our Projects</a>
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>Our Mission</h2>
+    <p>
+      Hope Connect Foundation is a grassroots organization dedicated to fostering collaboration,
+      social justice, and collective growth. We unite people of all backgrounds to create
+      lasting impact in underserved communities through action-oriented programs and partnerships.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>What We Do</h2>
+    <ul>
+      <li>🏫 Community Education & Outreach</li>
+      <li>🌱 Environmental Initiatives</li>
+      <li>🤝 Youth Mentorship & Leadership</li>
+      <li>🍲 Food Drives & Support Services</li>
+    </ul>
+  </section>
+
+  
+  <footer class="footer">
+    <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

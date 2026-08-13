@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Hope Connect Foundation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+   body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+  position: relative;
+}
+
+   body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8); /* stronger dark overlay */
+  z-index: -1;
+}
+    .header {
+    width: 100%;
+    height: 80px;
+}
+
+  header {
+    background-color: rgba(27,94,32,0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  header img {
+    height: 80px;
+    max-width: 100%;
+  }
+
+  header h1 {
+    margin: 0;
+    color: #ff5252;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(46,125,50,0.9);
+    padding: 12px 0;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-radius: 8px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    transition: color 0.2s;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    color: #ffcc80;
+    outline: none;
+    text-decoration: underline;
+  }
+
+  .hero {
+    background: rgba(0,0,0,0.6) url('https://www.transparenttextures.com/patterns/sketchy.png') repeat center center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.8rem, 4vw, 3em);
+    background-color: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 40px 20px;
+    background-color: rgba(255,255,255,0.03);
+    border-radius: 10px;
+  }
+
+  .section h2 {
+    color: #ff5252;
+    margin-bottom: 20px;
+  }
+
+  .project {
+    background-color: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease;
+  }
+
+  .project:hover {
+    transform: translateY(-5px);
+  }
+
+  .project h3 {
+    color: #4caf50;
+    margin-bottom: 8px;
+  }
+
+  .section img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  footer {
+    background-color: rgba(27,94,32,0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    header {
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 2em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="HopeConnect Foundation Logo">
+  <h1>Hope Connect Foundation</h1>
+</header>
+
+<nav>
+  <a href="index.html"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html"><i class="fas fa-users"></i> About</a>
+  <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+  <a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a>
+  <a href="get-involved.html"><i class="fas fa-hands-helping"></i> Get Involved</a>
+  <a href="gallery.html"><i class="fas fa-image"></i> Gallery</a>
+ <a href="contact.html" style="color:#ffcc80;"><i class="fas fa-envelope"></i> Contact</a>
+</nav>
+
+<section class="hero">
+  <h1>Stronger Together — Empowering Communities Through Action</h1>
+</section>
+
+<section class="section" style="text-align: center;">
+  <img src="community.jpeg" alt="Community Work">
+</section>
+
+<section class="section">
+  <h2>Our Mission</h2>
+  <p>
+    To unite diverse communities in building sustainable futures by promoting education, health, and environmental responsibility. Our mission is to create practical, grassroots projects that uplift families, empower youth, and inspire collective action—turning compassion into lasting change.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Our Projects</h2>
+  <p>We believe action speaks louder than words. Here’s how we’re making a difference:</p>
+
+  <div class="project">
+    <h3>📚 Education for All</h3>
+    <p>We provide free workshops, literacy classes, and tutoring for children and adults to bridge the education gap and empower individuals with skills for brighter futures.</p>
+  </div>
+
+  <div class="project">
+    <h3>🌱 Green Future</h3>
+    <p>Through tree planting campaigns, recycling initiatives, and community clean-ups, we inspire environmental stewardship and greener neighborhoods.</p>
+  </div>
+
+  <div class="project">
+    <h3>🤝 Youth Mentorship</h3>
+    <p>Our mentorship program connects young people with positive role models to develop leadership, career readiness, and life skills for future changemakers.</p>
+  </div>
+
+  <div class="project">
+    <h3>🍲 Feeding Hope</h3>
+    <p>We organize food drives, community kitchens, and meal delivery services to ensure families have access to nutritious meals year-round.</p>
+  </div>
+
+  <div class="project">
+    <h3>🏥 Health & Wellness</h3>
+    <p>From medical check-ups to mental health awareness events and community fitness programs, we prioritize holistic well-being in the communities we serve.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Our Intended Impact</h2>
+  <p>
+    Hope Connect Foundation measures success through meaningful community participation, improved access to opportunities, stronger local partnerships, and practical outcomes from each programme. We will use project feedback and documented results to improve our initiatives over time.
+  </p>
+  <ul>
+    <li>Increase participation in community education and youth development.</li>
+    <li>Support healthier and more environmentally responsible communities.</li>
+    <li>Strengthen collaboration between volunteers, community groups, and partners.</li>
+    <li>Document project outcomes and use feedback to improve future programmes.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
