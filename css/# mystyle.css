@@ -1,0 +1,17 @@
+.nav {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: red;
+    padding: 15px;
+}
+
+.nav a {
+    color: beige;
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    background-color: beige;
+    color: red;
+}
