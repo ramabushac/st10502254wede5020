@@ -37,4 +37,3 @@ The site demonstrates:
 - Appropriate use of images and alternative text.
 - Clear content related to the Hope Connect Foundation project.
 
-The exact marks awarded depend on the official lecturer-provided WEDE5020 rubric.
