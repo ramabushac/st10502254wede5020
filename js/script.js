@@ -1,122 +1,84 @@
-// Hope Connect Foundation
-// Shared JavaScript functionality
+// Hope Connect Foundation - Shared JavaScript
+document.addEventListener("DOMContentLoaded", () => {
+  const current = location.pathname.split("/").pop() || "index.html";
+  document.querySelectorAll(".site-nav a[data-page]").forEach(link => {
+    if (link.dataset.page === current) {
+      link.classList.add("active");
+      link.setAttribute("aria-current", "page");
+    }
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Highlight the current navigation page.
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    document.querySelectorAll("nav a, .nav a, header a").forEach(function (link) {
-        const href = (link.getAttribute("href") || "").split("#")[0];
-        if (href === currentPage || (currentPage === "" && href === "index.html")) {
-            link.classList.add("active");
+  const top = document.createElement("button");
+  top.id = "backToTop";
+  top.type = "button";
+  top.setAttribute("aria-label", "Back to top");
+  top.textContent = "↑";
+  document.body.appendChild(top);
+  window.addEventListener("scroll", () => {
+    top.style.display = window.scrollY > 350 ? "block" : "none";
+  });
+  top.addEventListener("click", () => window.scrollTo({top: 0, behavior: "smooth"}));
+
+  // Gallery lightbox with previous/next controls.
+  const links = [...document.querySelectorAll(".gallery-link")];
+  const box = document.querySelector("#lightbox");
+  if (links.length && box) {
+    const image = box.querySelector("img");
+    const close = box.querySelector(".close");
+    const prev = box.querySelector(".prev");
+    const next = box.querySelector(".next");
+    let index = 0;
+
+    const show = i => {
+      index = (i + links.length) % links.length;
+      image.src = links[index].getAttribute("href");
+      image.alt = links[index].querySelector("img")?.alt || "Gallery image";
+      box.classList.add("show");
+      box.setAttribute("aria-hidden", "false");
+    };
+    links.forEach((link, i) => link.addEventListener("click", e => {
+      e.preventDefault();
+      show(i);
+    }));
+    close?.addEventListener("click", () => {
+      box.classList.remove("show");
+      box.setAttribute("aria-hidden", "true");
+    });
+    prev?.addEventListener("click", () => show(index - 1));
+    next?.addEventListener("click", () => show(index + 1));
+    box.addEventListener("click", e => {
+      if (e.target === box) box.classList.remove("show");
+    });
+    document.addEventListener("keydown", e => {
+      if (!box.classList.contains("show")) return;
+      if (e.key === "Escape") box.classList.remove("show");
+      if (e.key === "ArrowLeft") show(index - 1);
+      if (e.key === "ArrowRight") show(index + 1);
+    });
+  }
+
+  // Client-side validation and confirmation for project forms.
+  document.querySelectorAll("form").forEach(form => {
+    form.addEventListener("submit", e => {
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      if (form.id === "volunteerForm" || form.classList.contains("contact-form-element")) {
+        e.preventDefault();
+        let message = form.querySelector(".form-message");
+        if (!message) {
+          message = document.createElement("p");
+          message.className = "form-message";
+          form.appendChild(message);
         }
+        message.textContent = form.id === "volunteerForm"
+          ? "Thank you for registering as a volunteer. We will contact you with the next steps."
+          : "Thank you for contacting Hope Connect Foundation. Your message has been prepared successfully.";
+        message.style.display = "block";
+        form.reset();
+      }
     });
-
-    // Add a simple back-to-top button when the page is long.
-    const topButton = document.createElement("button");
-    topButton.type = "button";
-    topButton.id = "backToTop";
-    topButton.textContent = "↑";
-    topButton.setAttribute("aria-label", "Back to top");
-    topButton.title = "Back to top";
-    topButton.style.display = "none";
-    topButton.style.position = "fixed";
-    topButton.style.right = "20px";
-    topButton.style.bottom = "20px";
-    topButton.style.zIndex = "999";
-    topButton.style.cursor = "pointer";
-    topButton.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-    document.body.appendChild(topButton);
-
-    window.addEventListener("scroll", function () {
-        topButton.style.display = window.scrollY > 350 ? "block" : "none";
-    });
-
-    // Basic contact/get-involved form validation.
-    document.querySelectorAll("form").forEach(function (form) {
-        form.addEventListener("submit", function (event) {
-            const requiredFields = form.querySelectorAll("[required]");
-            let valid = true;
-
-            requiredFields.forEach(function (field) {
-                if (!field.value.trim()) {
-                    valid = false;
-                    field.style.borderColor = "red";
-                } else {
-                    field.style.borderColor = "";
-                }
-            });
-
-            if (!valid) {
-                event.preventDefault();
-                alert("Please complete all required fields before submitting.");
-            }
-        });
-    });
+  });
 });
-
-
-// Previously inline scripts preserved from the original pages.
-
-// --- get-involved.html ---
-const form = document.getElementById('volunteerForm');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const activity = form.activity.value;
-
-    if(name && email && activity) {
-      alert(`Thank you, ${name}! You have signed up for ${activity.replace('_',' ')}.`);
-      form.reset();
-    } else {
-      alert('Please fill in all required fields.');
-    }
-  });
-
-// --- gallery.html ---
-const galleryImages = document.querySelectorAll('.gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const closeBtn = lightbox.querySelector('.close');
-  const prevBtn = lightbox.querySelector('.prev');
-  const nextBtn = lightbox.querySelector('.next');
-  let currentIndex = 0;
-
-  function openLightbox(index) {
-    currentIndex = index;
-    lightbox.style.display = 'flex';
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
-
-  function closeLightbox() { lightbox.style.display = 'none'; }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
-
-  galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-
-  window.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'Escape') closeLightbox();
-    }
-  });

@@ -7,162 +7,7 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-     body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  background: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-  background-size: cover;
-  color: #e0e0e0;
-  position: relative;
-}
-
-   body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8); /* stronger dark overlay */
-  z-index: -1;
-}
-    .header {
-    width: 100%;
-    height: 80px;
-}
-
-    header {
-      background-color: rgba(27, 94, 32, 0.9);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .header-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .header-content img {
-      height: 80px;
-      max-width: 100%;
-    }
-
-    .header-content h1 {
-      margin: 0;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: rgba(46, 125, 50, 0.9);
-      padding: 12px 0;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      margin: 8px 16px;
-      text-decoration: none;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffcc80;
-    }
-
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 30px auto;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-    }
-
-    .section h2 {
-      color: #ff5252;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    /* Contact Section */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-top: 20px;
-    }
-
-    .contact-info, 
-    .contact-form {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .contact-info p {
-      margin: 12px 0;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 6px;
-      background: rgba(255,255,255,0.1);
-      color: white;
-    }
-
-    .contact-form input::placeholder,
-    .contact-form textarea::placeholder {
-      color: #ccc;
-    }
-
-    .contact-form button {
-      background-color: #ff5252;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    .contact-form button:hover {
-      background-color: #ff7961;
-      transform: translateY(-2px);
-    }
-
-    .footer {
-      background-color: rgba(27, 94, 32, 0.9);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -178,15 +23,17 @@
   </header>
 
   <!-- Navigation -->
-  <nav>
-    <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="about.html"><i class="fas fa-users"></i> About</a>
-    <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
-    <a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a>
-    <a href="get-involved.html"><i class="fas fa-hands-helping"></i> Get Involved</a>
-    <a href="gallery.html"><i class="fas fa-image"></i> Gallery</a>
-    <a href="contact.html" style="color:#ffcc80;"><i class="fas fa-envelope"></i> Contact</a>
-  </nav>
+  <nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" data-page="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="about.html" data-page="about.html"><i class="fas fa-users"></i><span>About</span></a>
+    <a href="services.html" data-page="services.html"><i class="fas fa-cogs"></i><span>Services</span></a>
+    <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
+    <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
+    <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
+</nav>
 
   <!-- Contact Section -->
   <section class="section" id="contact">
@@ -200,13 +47,13 @@
           Sunday: Closed
         </p>
         <p><i class="fas fa-map-marker-alt"></i>  South Africa</p>
-        <p><i class="fas fa-phone"></i> <a href="tel:+2773608861" style="color:#ffcc80;">+27 73 608 861</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:contact@hopeconnectfoundation.org" style="color:#ffcc80;">contact@hopeconnectfoundation.org</a></p>
-        <p><a href="https://maps.app.goo.gl/hv6yegz2gjzL2h7Q9" target="_blank" style="color:#ffcc80;">📍 View on Google Maps</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+2773608861">+27 73 608 861</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:contact@hopeconnectfoundation.org">contact@hopeconnectfoundation.org</a></p>
+        <p><a href="https://maps.app.goo.gl/hv6yegz2gjzL2h7Q9" target="_blank">📍 View on Google Maps</a></p>
       </div>
       <!-- Contact Form -->
       <div class="contact-form">
-        <form action="#" method="post">
+        <form action="#" method="post" class="contact-form-element">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Your Email" required>
           <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
@@ -219,7 +66,6 @@
   <footer class="footer">
     <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
   </footer>
-
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
