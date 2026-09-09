@@ -97,11 +97,12 @@
     .lightbox .close, .lightbox .prev, .lightbox .next { font-size: 2rem; }
   }
 </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="HopeConnect Foundation Logo">
+  <img src="images/logo.png" alt="HopeConnect Foundation Logo">
   <div>
     <h1>Hope Connect Foundation</h1>
     <p style="margin:5px 0;">Bringing Communities Together Through Purpose</p>
@@ -122,13 +123,13 @@
   <h2>Our Gallery</h2>
   <p>A glimpse into the heart of Hope Connect Foundation — moments of change, hope, and togetherness captured in our community.</p>
   <div class="gallery">
-    <figure><img src="plant.webp" alt="Community Tree Planting"><figcaption>Community Tree Planting</figcaption></figure>
-    <figure><img src="food.webp" alt="Food Drive Volunteers"><figcaption>Food Drive Volunteers</figcaption></figure>
-    <figure><img src="ment.webp" alt="Youth Mentorship Session"><figcaption>Youth Mentorship Session</figcaption></figure>
-    <figure><img src="helth.webp" alt="Health Campaign"><figcaption>Community Health Campaign</figcaption></figure>
-    <figure><img src="tut.webp" alt="Tutoring Program"><figcaption>Community Tutoring Programme</figcaption></figure>
-    <figure><img src="com.webp" alt="Community Gathering"><figcaption>Community Gathering</figcaption></figure>
-    <figure><img src="ramcal.png" alt="Community Gathering"><figcaption>Community Gathering</figcaption></figure>
+    <figure><img src="images/plant.webp" alt="Community Tree Planting"><figcaption>Community Tree Planting</figcaption></figure>
+    <figure><img src="images/food.webp" alt="Food Drive Volunteers"><figcaption>Food Drive Volunteers</figcaption></figure>
+    <figure><img src="images/ment.webp" alt="Youth Mentorship Session"><figcaption>Youth Mentorship Session</figcaption></figure>
+    <figure><img src="images/helth.webp" alt="Health Campaign"><figcaption>Community Health Campaign</figcaption></figure>
+    <figure><img src="images/tut.webp" alt="Tutoring Program"><figcaption>Community Tutoring Programme</figcaption></figure>
+    <figure><img src="images/com.webp" alt="Community Gathering"><figcaption>Community Gathering</figcaption></figure>
+    <figure><img src="images/ramcal.png" alt="Community Gathering"><figcaption>Community Gathering</figcaption></figure>
   </div>
 </section>
 
@@ -144,52 +145,8 @@
   <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
 </footer>
 
-<script>
-  const galleryImages = document.querySelectorAll('.gallery img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = lightbox.querySelector('img');
-  const closeBtn = lightbox.querySelector('.close');
-  const prevBtn = lightbox.querySelector('.prev');
-  const nextBtn = lightbox.querySelector('.next');
-  let currentIndex = 0;
 
-  function openLightbox(index) {
-    currentIndex = index;
-    lightbox.style.display = 'flex';
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
 
-  function closeLightbox() { lightbox.style.display = 'none'; }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
-    lightboxImg.src = galleryImages[currentIndex].src;
-    lightboxImg.alt = galleryImages[currentIndex].alt;
-  }
-
-  galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-  });
-
-  closeBtn.addEventListener('click', closeLightbox);
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-
-  window.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'Escape') closeLightbox();
-    }
-  });
-</script>
-
+    <script src="js/script.js"></script>
 </body>
 </html>
