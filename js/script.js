@@ -8,12 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const top = document.createElement("button");
-  top.id = "backToTop";
-  top.type = "button";
-  top.setAttribute("aria-label", "Back to top");
-  top.textContent = "↑";
-  document.body.appendChild(top);
+  let top = document.querySelector("#backToTop");
+  if (!top) {
+    top = document.createElement("button");
+    top.id = "backToTop";
+    top.type = "button";
+    top.setAttribute("aria-label", "Back to top");
+    top.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
+    document.body.appendChild(top);
+  }
   window.addEventListener("scroll", () => {
     top.style.display = window.scrollY > 350 ? "block" : "none";
   });
@@ -24,15 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const box = document.querySelector("#lightbox");
   if (links.length && box) {
     const image = box.querySelector("img");
-    const close = box.querySelector(".close");
+    const close = box.querySelector(".lightbox-close, .close");
     const prev = box.querySelector(".prev");
     const next = box.querySelector(".next");
+    const caption = box.querySelector("#lightboxCaption");
     let index = 0;
 
     const show = i => {
       index = (i + links.length) % links.length;
       image.src = links[index].getAttribute("href");
       image.alt = links[index].querySelector("img")?.alt || "Gallery image";
+      if (caption) caption.textContent = links[index].dataset.caption || image.alt;
       box.classList.add("show");
       box.setAttribute("aria-hidden", "false");
     };
@@ -51,7 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.addEventListener("keydown", e => {
       if (!box.classList.contains("show")) return;
-      if (e.key === "Escape") box.classList.remove("show");
+      if (e.key === "Escape") {
+        box.classList.remove("show");
+        box.setAttribute("aria-hidden", "true");
+      }
       if (e.key === "ArrowLeft") show(index - 1);
       if (e.key === "ArrowRight") show(index + 1);
     });
