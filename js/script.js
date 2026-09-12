@@ -89,4 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  // Image quality/performance enhancement: mark orientation and lazy-load
+  // gallery images while keeping the original high-resolution files for lightbox.
+  document.querySelectorAll(".gallery img, .project-images img").forEach(img => {
+    img.loading = img.loading || "lazy";
+    img.decoding = "async";
+    const markOrientation = () => {
+      const figure = img.closest("figure");
+      if (!figure || !img.naturalWidth || !img.naturalHeight) return;
+      figure.dataset.orientation = img.naturalHeight > img.naturalWidth ? "portrait" : "landscape";
+    };
+    if (img.complete) markOrientation();
+    else img.addEventListener("load", markOrientation, {once: true});
+  });
+
 });
