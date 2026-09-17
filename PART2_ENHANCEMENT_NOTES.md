@@ -33,5 +33,5 @@ The website was enhanced for WEDE5020 Part 2 with a stronger shared CSS system a
 
 - All seven pages use the same external stylesheet and JavaScript file.
 - Semantic main content containers were added to all seven pages.
-- The obsolete `css/# mystyle.css` file was removed.
+- The obsolete `css/# mystyle.css` file was removed in the final cleanup pass.
 - Local references were checked after the enhancement.

@@ -1,6 +1,6 @@
 # Hope Connect Foundation Wireframes
 
-The seven page wireframes are supplied as separate image files for clear submission evidence:
+The seven page wireframes are supplied as separate image files
 
 1. 01-home-page.png
 2. 02-about-page.png
