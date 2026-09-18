@@ -327,30 +327,5 @@ World Wide Web Consortium (W3C). (n.d.) *CSS Snapshot*. Available at: https://ww
 
 World Wide Web Consortium (W3C). (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 18 September 2026).
 
-## 16. Final Part 2  Checklist
-
-- [x] External `css/style.css` created and used.
-- [x] All seven HTML pages linked to the external stylesheet.
-- [x] CSS reset and base styling implemented.
-- [x] Typography styling implemented.
-- [x] Flexbox used for responsive layouts.
-- [x] CSS Grid used for multi-column layouts.
-- [x] Colours, borders, shadows and visual effects applied.
-- [x] `:hover`, `:focus-visible` and `:active` states included.
-- [x] Desktop, tablet and mobile breakpoints implemented.
-- [x] Relative units including `%`, `rem`, `em`, `vw` and `vh` used.
-- [x] `clamp()` used for responsive sizing.
-- [x] Responsive images implemented with `srcset` and `sizes`.
-- [x] Responsive image variants stored under `images/responsive/`.
-- [x] Accessibility and usability features implemented.
-- [x] Part 1 and Part 2 changes documented in the changelog.
-- [x] Desktop, tablet and mobile testing screenshots included under `images/`.
-- [x] Screenshot evidence linked directly from this README.
-- [x] Table of contents included.
-- [x] References included.
-- [x] Wireframes included in the `wireframes/` folder.
-
----
-
 **WEDE5020 Part 2 - Hope Connect Foundation**  
 **Student Number: ST10502254**

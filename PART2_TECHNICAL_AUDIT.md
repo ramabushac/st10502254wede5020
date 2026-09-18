@@ -32,4 +32,4 @@ Final source-level audit of the Hope Connect Foundation website.
 
 ## Screenshot Evidence
 
-Actual browser screenshots must be captured using Developer Tools/device emulation and inserted into `README.md` before repository submission.
+Actual browser screenshots have been captured using Developer Tools/device emulation and inserted into `README.md`  repository 
