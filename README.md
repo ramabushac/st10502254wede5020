@@ -5,6 +5,27 @@
 **Module:** WEDE5020  
 **Project:** Hope Connect Foundation Website  
 
+## Table of Contents
+
+| No. | Section | Description |
+|---|---|---|
+| 1 | [Project Overview](#1-project-overview) | Purpose and Part 2 focus |
+| 2 | [Website Pages](#2-website-pages) | Seven website pages |
+| 3 | [Project Structure](#3-project-structure) | Main project folders and files |
+| 4 | [External CSS Stylesheet](#4-external-css-stylesheet) | Shared stylesheet and CSS features |
+| 5 | [Typography](#5-typography) | Typography and relative sizing |
+| 6 | [Layout Design](#6-layout-design) | Flexbox and CSS Grid |
+| 7 | [Visual Styling and Interaction](#7-visual-styling-and-interaction) | Colours, borders, shadows and states |
+| 8 | [Responsive Design](#8-responsive-design) | Breakpoints and responsive layouts |
+| 9 | [Responsive Images](#9-responsive-images) | `srcset`, `sizes` and image variants |
+| 10 | [Accessibility and Usability](#10-accessibility-and-usability) | Accessibility and usability features |
+| 11 | [Part 1 Feedback and Part 2 Changelog](#11-part-1-feedback-and-part-2-changelog) | Development changes |
+| 12 | [Browser Developer Tools Testing](#12-browser-developer-tools-testing) | Test devices and checks |
+| 13 | [Screenshot Evidence](#13-screenshot-evidence) | Desktop, tablet and mobile evidence |
+| 14 | [Reflection](#14-reflection) | Learning reflection |
+| 15 | [References](#15-references) | Sources used for Part 2 |
+| 16 | [Final Part 2 Submission Checklist](#16-final-part-2-submission-checklist) | Submission verification |
+
 ## 1. Project Overview
 
 Hope Connect Foundation is a non-profit organisation website developed for the WEDE5020 module. Part 2 builds on the Part 1 website by applying CSS styling, responsive design and usability improvements.
@@ -169,7 +190,7 @@ Accessibility and usability were considered throughout the website. Features inc
 
 ## 11. Part 1 Feedback and Part 2 Changelog
 
-The following changes were made during the Part 2 development and enhancement process:
+The following changes were made during the Part 2 development and enhancement process.
 
 ### CSS and Visual Design
 
@@ -207,11 +228,13 @@ The following changes were made during the Part 2 development and enhancement pr
 - Confirmed that all seven website pages are included.
 - Confirmed that the project wireframes are included.
 - Confirmed that the supplied project image collection is used throughout the website.
-- Removed duplicate README-related documentation files from the final submission package.
+- Added desktop, tablet and mobile responsive-testing evidence to the `images/` folder.
+- Linked all testing images directly from this README.
+- Consolidated the Part 2 documentation into this README to avoid duplicate README files.
 
 ## 12. Browser Developer Tools Testing
 
-The website should be tested using browser Developer Tools with device emulation enabled. Testing should confirm that the website remains usable and visually consistent at different viewport sizes.
+The website was tested using browser Developer Tools with device emulation enabled. Testing confirms that the website remains usable and visually consistent at different viewport sizes.
 
 ### Required Test Viewports
 
@@ -224,7 +247,7 @@ The website should be tested using browser Developer Tools with device emulation
 | Mobile | 390 × 844 | Gallery |
 | Mobile | 375 × 667 | Contact |
 
-During testing, check:
+During testing, the following were checked:
 
 - Navigation and menu behaviour
 - Text readability and wrapping
@@ -239,7 +262,7 @@ During testing, check:
 
 ## 13. Screenshot Evidence
 
-The responsive testing screenshots are stored together in the main `images/` folder. They are linked directly below using relative paths so that they display correctly when the README is viewed in the project repository.
+The responsive testing screenshots are stored together in the main `images/` folder. They are linked directly below using relative paths so that they display when the README is viewed in the project repository or directly from the extracted project folder.
 
 ### Desktop Testing
 
@@ -292,7 +315,19 @@ Through this project, I gained practical experience in applying CSS styling prin
 
 The testing process also helped me identify layout and presentation issues at smaller screen sizes. I used the results to adjust navigation, spacing, typography, cards and image presentation so that the website remains usable across different viewport sizes.
 
-## 15. Final Part 2 Submission Checklist
+## 15. References
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *CSS Grid Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 18 September 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *CSS Flexible Box Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout (Accessed: 18 September 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Performance/Responsive_images (Accessed: 18 September 2026).
+
+World Wide Web Consortium (W3C). (n.d.) *CSS Snapshot*. Available at: https://www.w3.org/TR/css/ (Accessed: 18 September 2026).
+
+World Wide Web Consortium (W3C). (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 18 September 2026).
+
+## 16. Final Part 2  Checklist
 
 - [x] External `css/style.css` created and used.
 - [x] All seven HTML pages linked to the external stylesheet.
@@ -311,5 +346,11 @@ The testing process also helped me identify layout and presentation issues at sm
 - [x] Part 1 and Part 2 changes documented in the changelog.
 - [x] Desktop, tablet and mobile testing screenshots included under `images/`.
 - [x] Screenshot evidence linked directly from this README.
+- [x] Table of contents included.
+- [x] References included.
 - [x] Wireframes included in the `wireframes/` folder.
 
+---
+
+**WEDE5020 Part 2 - Hope Connect Foundation**  
+**Student Number: ST10502254**
