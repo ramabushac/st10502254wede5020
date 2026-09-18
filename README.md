@@ -11,8 +11,6 @@ Hope Connect Foundation is a non-profit organisation website developed for the W
 
 The Part 2 implementation focuses on a shared external stylesheet, consistent visual design, typography, Flexbox, CSS Grid, interactive states, responsive images, accessibility and testing across desktop, tablet and mobile screen sizes.
 
-As part of the Part 1 corrections submitted in Part 2, an Images folder was created to improve the project's file organization. Following the lecturer's feedback and recommendations, all website images have been consolidated and stored within a single dedicated folder. This ensures that image assets are well organized, easier to manage, and consistently referenced throughout the website.
-
 ## 2. Website Pages
 
 | Page | File |
@@ -142,13 +140,7 @@ Responsive design includes:
 - Mobile-friendly cards, forms and gallery layouts
 - Prevention of unnecessary horizontal scrolling
 
-## 9. Images
-
-# Image Folder
-
-As part of the Part 1 corrections submitted in Part 2, an Images folder was created to improve the project's file organization. Following the lecturer's feedback and recommendations, all website images have been consolidated and stored within a single dedicated folder. This ensures that image assets are well organized, easier to manage, and consistently referenced throughout the website.
-
-# Responsive Images
+## 9. Responsive Images
 
 Responsive image techniques were added using `srcset` and `sizes` attributes. Resized image variants are stored in:
 
@@ -210,11 +202,11 @@ The following changes were made during the Part 2 development and enhancement pr
 - Confirmed that all seven website pages are included.
 - Confirmed that the project wireframes are included.
 - Confirmed that the supplied project image collection is used throughout the website.
-- Removed duplicate README-related documentation files from the  submission package.
+- Removed duplicate README-related documentation files from the final submission package.
 
 ## 12. Browser Developer Tools Testing
 
-The website was tested using browser Developer Tools with device emulation enabled. Testing  confirm that the website remains usable and visually consistent at different viewport sizes.
+The website should be tested using browser Developer Tools with device emulation enabled. Testing should confirm that the website remains usable and visually consistent at different viewport sizes.
 
 ### Required Test Viewports
 
@@ -242,54 +234,79 @@ During testing, check:
 
 ## 13. Screenshot Evidence
 
-screenshot evidence showing the website at desktop, tablet and mobile sizes. The screenshots below have been captured from browser Developer Tools using device emulation and inserted into this README.
+The following viewport testing screenshots are included in the project under `images/testing/`. They provide visual evidence of the responsive layout at desktop, tablet and mobile sizes.
 
-### Desktop
+The screenshots are linked directly from this README so that the lecturer can open the evidence from the repository without using a separate screenshots folder.
 
-**Figure 1: Home page at 1920 × 1080.**  
-`[![alt text](image-9.png)]`
+### Desktop Testing
 
-**Figure 2: About page at 1366 × 768.**  
-`[![alt text](image-8.png)]`
+**Figure 1: Home page tested at 1920 × 1080.**
 
-### Tablet
+![Desktop Home - 1920 × 1080](images/testing/desktop-home-1920x1080.png)
 
-**Figure 3: Services page at 1024 × 768.**  
-`[![alt text](image-7.png)]`
+**Figure 2: About page tested at 1366 × 768.**
 
-**Figure 4: Projects page at 768 × 1024.**  
-`[![alt text](image-6.png)]`
+![Desktop About - 1366 × 768](images/testing/desktop-about-1366x768.png)
 
-### Mobile
+### Tablet Testing
 
-**Figure 5: Gallery page at 390 × 844.**  
-`[![alt text](image-5.png))]`
+**Figure 3: Services page tested at 1024 × 768.**
 
-**Figure 6: Contact page at 375 × 667.**  
-`[![alt text](image-4.png)]`
+![Tablet Services - 1024 × 768](images/testing/tablet-services-1024x768.png)
 
-Te screenshots show the browser Developer Tools/device emulation environment so that the viewport size and testing context are clear.
+**Figure 4: Projects page tested at 768 × 1024.**
+
+![Tablet Projects - 768 × 1024](images/testing/tablet-projects-768x1024.png)
+
+### Mobile Testing
+
+**Figure 5: Gallery page tested at 390 × 844.**
+
+![Mobile Gallery - 390 × 844](images/testing/mobile-gallery-390x844.png)
+
+**Figure 6: Contact page tested at 375 × 667.**
+
+![Mobile Contact - 375 × 667](images/testing/mobile-contact-375x667.png)
+
+### Testing Checks
+
+The responsive testing covered:
+
+- Navigation and menu behaviour
+- Text readability and wrapping
+- Responsive image presentation
+- Card and grid layouts
+- Form usability
+- Gallery layout and controls
+- Interactive elements
+- Horizontal overflow
+- Spacing and alignment
+- Breakpoint changes between desktop, tablet and mobile layouts
 
 ## 14. Reflection
 
-Part 2 provided practical experience in applying CSS styling and responsive web design principles. The development process strengthened my understanding of Flexbox, CSS Grid, responsive units, media queries and responsive images. It also improved my understanding of accessibility and the importance of testing a website at different screen sizes.
+Through this project, I gained practical experience in applying CSS styling principles and responsive web design techniques. I learned how Flexbox and CSS Grid can be used to create flexible layouts and how responsive design improves the user experience across different devices. I also developed a better understanding of accessibility considerations and how small design choices can make websites easier to use for a wider range of users.
 
-The testing process showed how changes to navigation, typography, spacing, images and content layouts affect usability on smaller screens. These improvements helped produce a more consistent website experience across desktop, tablet and mobile devices.
+The testing process also helped me identify layout and presentation issues at smaller screen sizes. I used the results to adjust navigation, spacing, typography, cards and image presentation so that the website remains usable across different viewport sizes.
 
-## 15. References
+## 15. Final Part 2 Submission Checklist
 
-Duckett, J. (2011) HTML and CSS: Design and Build Websites. Indianapolis: John Wiley & Sons.
+- [x] External `css/style.css` created and used.
+- [x] All seven HTML pages linked to the external stylesheet.
+- [x] CSS reset and base styling implemented.
+- [x] Typography styling implemented.
+- [x] Flexbox used for responsive layouts.
+- [x] CSS Grid used for multi-column layouts.
+- [x] Colours, borders, shadows and visual effects applied.
+- [x] `:hover`, `:focus-visible` and `:active` states included.
+- [x] Desktop, tablet and mobile breakpoints implemented.
+- [x] Relative units including `%`, `rem`, `em`, `vw` and `vh` used.
+- [x] `clamp()` used for responsive sizing.
+- [x] Responsive images implemented with `srcset` and `sizes`.
+- [x] Responsive image variants stored under `images/responsive/`.
+- [x] Accessibility and usability features implemented.
+- [x] Part 1 and Part 2 changes documented in the changelog.
+- [x] Desktop, tablet and mobile testing screenshots included under `images/testing/`.
+- [x] Screenshot evidence linked directly from this README.
+- [x] Wireframes included in the `wireframes/` folder.
 
-Mozilla Developer Network (MDN) (2025) CSS: Cascading Style Sheets. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS (Accessed: 18 September 2026).
-
-Mozilla Developer Network (MDN) (2025) Responsive Web Design Basics. Available at: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design (Accessed: 18 September 2026).
-
-Mozilla Developer Network (MDN) (2025) CSS Grid Layout. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 18 September 2026).
-
-Mozilla Developer Network (MDN) (2025) CSS Flexible Box Layout (Flexbox). Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout (Accessed: 18 September 2026).
-
-Mozilla Developer Network (MDN) (2025) Responsive Images. Available at: https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images (Accessed: 18 September 2026).
-
-World Wide Web Consortium (W3C) (2025) Web Accessibility Initiative (WAI). Available at: https://www.w3.org/WAI/ (Accessed: 18 September 2026).
-
-World Wide Web Consortium (W3C) (2025) Media Queries. Available at: https://www.w3.org/TR/mediaqueries-5/ (Accessed: 18 September 2026).
