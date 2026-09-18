@@ -1,6 +1,6 @@
 # WEDE5020 Part 2 Technical Audit
 
-Final source-level audit of the Hope Connect Foundation website.
+Source-level audit of the Hope Connect Foundation website.
 
 ## Results
 
