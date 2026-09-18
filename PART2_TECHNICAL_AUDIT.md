@@ -1,6 +1,6 @@
 # WEDE5020 Part 2 Technical Audit
 
-Source-level audit of the Hope Connect Foundation website.
+Final source-level audit of the Hope Connect Foundation website.
 
 ## Results
 
@@ -32,4 +32,4 @@ Source-level audit of the Hope Connect Foundation website.
 
 ## Screenshot Evidence
 
-Actual browser screenshots has been captured using Developer Tools/device emulation and inserted into `README.md`  repository.
+Actual browser screenshots must be captured using Developer Tools/device emulation and inserted into `README.md` before repository submission.

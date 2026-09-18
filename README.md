@@ -40,9 +40,14 @@ st10502254wede5020/
 ├── js/
 │   └── script.js
 ├── images/
-│   └── responsive/
-├── wireframes/
-└── screenshots/
+│   ├── responsive/
+│   ├── testing-desktop-home-1920x1080.png
+│   ├── testing-desktop-about-1366x768.png
+│   ├── testing-tablet-services-1024x768.png
+│   ├── testing-tablet-projects-768x1024.png
+│   ├── testing-mobile-gallery-390x844.png
+│   └── testing-mobile-contact-375x667.png
+└── wireframes/
 ```
 
 ## 4. External CSS Stylesheet
@@ -234,39 +239,37 @@ During testing, check:
 
 ## 13. Screenshot Evidence
 
-The following viewport testing screenshots are included in the project under `images/testing/`. They provide visual evidence of the responsive layout at desktop, tablet and mobile sizes.
-
-The screenshots are linked directly from this README so that the lecturer can open the evidence from the repository without using a separate screenshots folder.
+The responsive testing screenshots are stored together in the main `images/` folder. They are linked directly below using relative paths so that they display correctly when the README is viewed in the project repository.
 
 ### Desktop Testing
 
 **Figure 1: Home page tested at 1920 × 1080.**
 
-![Desktop Home - 1920 × 1080](images/testing/desktop-home-1920x1080.png)
+<img src="./images/testing-desktop-home-1920x1080.png" alt="Hope Connect Foundation Home page tested at 1920 by 1080 desktop viewport" width="900">
 
 **Figure 2: About page tested at 1366 × 768.**
 
-![Desktop About - 1366 × 768](images/testing/desktop-about-1366x768.png)
+<img src="./images/testing-desktop-about-1366x768.png" alt="Hope Connect Foundation About page tested at 1366 by 768 desktop viewport" width="900">
 
 ### Tablet Testing
 
 **Figure 3: Services page tested at 1024 × 768.**
 
-![Tablet Services - 1024 × 768](images/testing/tablet-services-1024x768.png)
+<img src="./images/testing-tablet-services-1024x768.png" alt="Hope Connect Foundation Services page tested at 1024 by 768 tablet viewport" width="900">
 
 **Figure 4: Projects page tested at 768 × 1024.**
 
-![Tablet Projects - 768 × 1024](images/testing/tablet-projects-768x1024.png)
+<img src="./images/testing-tablet-projects-768x1024.png" alt="Hope Connect Foundation Projects page tested at 768 by 1024 tablet viewport" width="700">
 
 ### Mobile Testing
 
 **Figure 5: Gallery page tested at 390 × 844.**
 
-![Mobile Gallery - 390 × 844](images/testing/mobile-gallery-390x844.png)
+<img src="./images/testing-mobile-gallery-390x844.png" alt="Hope Connect Foundation Gallery page tested at 390 by 844 mobile viewport" width="390">
 
 **Figure 6: Contact page tested at 375 × 667.**
 
-![Mobile Contact - 375 × 667](images/testing/mobile-contact-375x667.png)
+<img src="./images/testing-mobile-contact-375x667.png" alt="Hope Connect Foundation Contact page tested at 375 by 667 mobile viewport" width="375">
 
 ### Testing Checks
 
@@ -306,7 +309,7 @@ The testing process also helped me identify layout and presentation issues at sm
 - [x] Responsive image variants stored under `images/responsive/`.
 - [x] Accessibility and usability features implemented.
 - [x] Part 1 and Part 2 changes documented in the changelog.
-- [x] Desktop, tablet and mobile testing screenshots included under `images/testing/`.
+- [x] Desktop, tablet and mobile testing screenshots included under `images/`.
 - [x] Screenshot evidence linked directly from this README.
 - [x] Wireframes included in the `wireframes/` folder.
 

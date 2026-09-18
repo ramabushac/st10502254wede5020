@@ -23,4 +23,17 @@ Part: Part 2 - CSS Styling and Responsive Design
 - The seven individual wireframe images were enlarged 2x and sharpened for clearer viewing and submission.
 - Local HTML image/page references were checked. No broken local references were found.
 
+## Final manual browser test
 
+Before submission, open `index.html` in a browser and check:
+
+1. Desktop layout at normal browser width.
+2. Tablet layout below 960px.
+3. Mobile layout below 560px.
+4. Navigation links on every page.
+5. Gallery lightbox, previous/next buttons and Escape key.
+6. Volunteer and Contact form validation.
+7. Image clarity and correct cropping.
+8. No horizontal scrolling on mobile.
+9. Keyboard focus visibility.
+10. All seven separate wireframe PNGs open clearly.
