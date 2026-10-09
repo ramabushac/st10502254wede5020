@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Hope Connect Foundation</title>
+  <title>Contact Hope Connect Foundation | Enquiries and Support</title>
+  <meta name="description" content="Contact Hope Connect Foundation with general messages, service enquiries, volunteering questions, sponsorship requests or partnership enquiries.">
+  <meta name="keywords" content="contact Hope Connect Foundation, service enquiry, volunteering, sponsorship, community support">
+  <meta name="author" content="Hope Connect Foundation">
+  <meta name="theme-color" content="#0b141b">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -32,6 +36,7 @@
     <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
     <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
     <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-clipboard-question"></i><span>Enquiry</span></a>
     <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </div>
 </nav>
@@ -56,14 +61,28 @@
       </div>
       <!-- Contact Form -->
       <div class="contact-form">
-        <form action="#" method="post" class="contact-form-element">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
+        <form id="contactForm" class="contact-form-element" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" style="display:none">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" minlength="2" maxlength="80" autocomplete="name" required>
           <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+          <input type="email" id="email" name="email" placeholder="name@example.com" maxlength="120" autocomplete="email" required>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+27 73 608 861" pattern="^\+?[0-9\s()-]{7,20}$" maxlength="20" autocomplete="tel" required>
+          <label for="messageType">Message Type</label>
+          <select id="messageType" name="message_type" required>
+            <option value="">Select a message type</option>
+            <option>General enquiry</option>
+            <option>Service support</option>
+            <option>Volunteering</option>
+            <option>Sponsorship</option>
+            <option>Partnership</option>
+            <option>Feedback</option>
+          </select>
+          <label for="message">Full Message</label>
+          <textarea id="message" name="message" rows="6" minlength="20" maxlength="1500" placeholder="Tell us how we can help." required></textarea>
           <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <p id="contactStatus" class="form-message" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Enquiry | Hope Connect Foundation</title>
+  <meta name="description" content="Send Hope Connect Foundation an enquiry about services, volunteering, sponsorship or community support.">
+  <meta name="keywords" content="service enquiry, volunteering, sponsorship, community support, Hope Connect Foundation">
+  <meta name="author" content="Hope Connect Foundation">
+  <meta name="theme-color" content="#0b141b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header>
+  <div class="header-content">
+    <img src="images/logo.png" alt="Hope Connect Foundation Logo">
+    <div>
+      <h1>Service Enquiry</h1>
+      <p>Tell us what support you are looking for.</p>
+    </div>
+  </div>
+</header>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" data-page="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="about.html" data-page="about.html"><i class="fas fa-users"></i><span>About</span></a>
+    <a href="services.html" data-page="services.html"><i class="fas fa-cogs"></i><span>Services</span></a>
+    <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
+    <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
+    <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-clipboard-question"></i><span>Enquiry</span></a>
+    <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
+  </div>
+</nav>
+<main id="main-content">
+  <section class="section">
+    <h2>Enquire About Support</h2>
+    <p>Use this form to ask about services, products/resources, volunteering or sponsorship. We will review your request and respond about availability, next steps and any applicable costs.</p>
+    <form id="enquiryForm" class="project-form" novalidate>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" style="display:none">
+      <div class="form-grid">
+        <div>
+          <label for="enquiryName">Full Name</label>
+          <input type="text" id="enquiryName" name="name" minlength="2" maxlength="80" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="enquiryEmail">Email Address</label>
+          <input type="email" id="enquiryEmail" name="email" maxlength="120" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="enquiryPhone">Phone Number</label>
+          <input type="tel" id="enquiryPhone" name="phone" pattern="^\+?[0-9\s()-]{7,20}$" maxlength="20" autocomplete="tel" required>
+        </div>
+        <div>
+          <label for="enquiryType">Enquiry Type</label>
+          <select id="enquiryType" name="type" required>
+            <option value="">Select one</option>
+            <option>Services</option>
+            <option>Products or resources</option>
+            <option>Volunteering</option>
+            <option>Sponsorship</option>
+          </select>
+        </div>
+        <div>
+          <label for="enquiryDate">Preferred Date</label>
+          <input type="date" id="enquiryDate" name="preferred_date" required>
+        </div>
+        <div>
+          <label for="enquiryBudget">Budget or Cost Question</label>
+          <select id="enquiryBudget" name="budget">
+            <option value="">Not applicable</option>
+            <option>Need cost information</option>
+            <option>Under R1,000</option>
+            <option>R1,000 - R5,000</option>
+            <option>Over R5,000</option>
+          </select>
+        </div>
+      </div>
+      <label for="enquiryMessage">Tell us what you need</label>
+      <textarea id="enquiryMessage" name="message" rows="6" minlength="20" maxlength="1000" required></textarea>
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+      <p id="enquiryStatus" class="form-message" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+<footer><p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p></footer>
+<script src="js/script.js"></script>
+</body>
+</html>
