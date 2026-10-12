@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Hope Connect Foundation | Enquiries and Support</title>
-  <meta name="description" content="Contact Hope Connect Foundation with general messages, service enquiries, volunteering questions, sponsorship requests or partnership enquiries.">
-  <meta name="keywords" content="contact Hope Connect Foundation, service enquiry, volunteering, sponsorship, community support">
+  <title>Contact Us | Hope Connect Foundation</title>
+  <meta name="description" content="Contact Hope Connect Foundation. Send us a message, find our opening hours, phone number and email, and see where we work in South Africa.">
+  <meta name="keywords" content="contact Hope Connect Foundation, charity contact South Africa, opening hours">
   <meta name="author" content="Hope Connect Foundation">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0b141b">
+  <link rel="canonical" href="https://ramabushac.github.io/st10502254wede5020/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hope Connect Foundation">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Contact Us | Hope Connect Foundation">
+  <meta property="og:description" content="Contact Hope Connect Foundation. Send us a message, find our opening hours, phone number and email, and see where we work in South Africa.">
+  <meta property="og:url" content="https://ramabushac.github.io/st10502254wede5020/contact.html">
+  <meta name="twitter:card" content="summary">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,7 +31,7 @@
       <img src="images/logo.png" alt="HopeConnect Foundation Logo" srcset="images/responsive/logo-480.png 480w, images/responsive/logo-960.png 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
       <div>
         <h1>Hope Connect Foundation</h1>
-        <p>We’d love to hear from you — Get in Touch</p>
+        <p>We’d love to hear from you: get in touch</p>
       </div>
     </div>
   </header>
@@ -36,7 +45,7 @@
     <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
     <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
     <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
-    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-clipboard-question"></i><span>Enquiry</span></a>
+    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-question-circle"></i><span>Enquiry</span></a>
     <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </div>
 </nav>
@@ -61,28 +70,39 @@
       </div>
       <!-- Contact Form -->
       <div class="contact-form">
-        <form id="contactForm" class="contact-form-element" novalidate>
-        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="honeypot" style="display:none">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" minlength="2" maxlength="80" autocomplete="name" required>
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" placeholder="name@example.com" maxlength="120" autocomplete="email" required>
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="+27 73 608 861" pattern="^\+?[0-9\s()-]{7,20}$" maxlength="20" autocomplete="tel" required>
-          <label for="messageType">Message Type</label>
-          <select id="messageType" name="message_type" required>
-            <option value="">Select a message type</option>
-            <option>General enquiry</option>
-            <option>Service support</option>
-            <option>Volunteering</option>
-            <option>Sponsorship</option>
-            <option>Partnership</option>
-            <option>Feedback</option>
+        <form action="#" method="post" class="contact-form-element" data-ajax-form="contact" novalidate>
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required minlength="2" maxlength="60" data-rule="name" data-label="Full name">
+
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required maxlength="100" data-rule="email" data-label="Email address">
+
+          <label for="phone">Phone number (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="073 123 4567" autocomplete="tel" inputmode="tel" maxlength="16" pattern="(?:\+27|0)[ ]?[0-9]{2}[ \-]?[0-9]{3}[ \-]?[0-9]{4}" title="South African number, e.g. 073 123 4567 or +27 73 123 4567" data-rule="phone" data-label="Phone number">
+
+          <label for="type">Type of message</label>
+          <select id="type" name="type" required data-label="Type of message">
+            <option value="" disabled selected>Choose a message type</option>
+            <option value="general">General enquiry</option>
+            <option value="feedback">Feedback</option>
+            <option value="media">Media request</option>
+            <option value="partnership">Partnership</option>
+            <option value="complaint">Complaint</option>
           </select>
-          <label for="message">Full Message</label>
-          <textarea id="message" name="message" rows="6" minlength="20" maxlength="1500" placeholder="Tell us how we can help." required></textarea>
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What is your message about?" required minlength="5" maxlength="100" data-label="Subject">
+
+          <label for="message">Your message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message (at least 20 characters)" required minlength="20" maxlength="1000" data-label="Message"></textarea>
+
+          <label class="check-label" for="consent"><input type="checkbox" id="consent" name="consent" required data-label="Consent"> I agree that Hope Connect Foundation may use these details to reply to me.</label>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input class="hp-input" type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
           <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-          <p id="contactStatus" class="form-message" role="status" aria-live="polite"></p>
+          <div class="form-status" aria-live="polite" hidden></div>
         </form>
       </div>
     </div>
@@ -93,7 +113,9 @@
 
   <footer class="footer">
     <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
+    <p class="share-links">Share this page: <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fcontact.html" target="_blank" rel="noopener noreferrer">Facebook</a> <a href="https://wa.me/?text=Contact%20Us%20%7C%20Hope%20Connect%20Foundation%20https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fcontact.html" target="_blank" rel="noopener noreferrer">WhatsApp</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fcontact.html" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fcontact.html&amp;text=Contact%20Us%20%7C%20Hope%20Connect%20Foundation" target="_blank" rel="noopener noreferrer">X</a></p>
   </footer>
   <script src="js/script.js"></script>
+  <script src="js/forms.js"></script>
 </body>
 </html>

@@ -4,80 +4,409 @@
 **Student Number:** ST10502254  
 **Module:** WEDE5020  
 **Project:** Hope Connect Foundation Website  
+**Repository:** https://github.com/ramabushac/st10502254wede5020  
+**Live website:** https://ramabushac.github.io/st10502254wede5020/ *(update this link if the site is deployed elsewhere)*
 
 ## Table of Contents
 
 | No. | Section | Description |
 |---|---|---|
-| 1 | [Project Overview](#1-project-overview) | Purpose and Part 2 focus |
+| 1 | [Project Overview](#1-project-overview) | Purpose and Part 3 focus |
 | 2 | [Website Pages](#2-website-pages) | Eight website pages |
-| 3 | [Project Structure](#3-project-structure) | Main project folders and files |
-| 4 | [External CSS Stylesheet](#4-external-css-stylesheet) | Shared stylesheet and CSS features |
-| 5 | [Typography](#5-typography) | Typography and relative sizing |
-| 6 | [Layout Design](#6-layout-design) | Flexbox and CSS Grid |
-| 7 | [Visual Styling and Interaction](#7-visual-styling-and-interaction) | Colours, borders, shadows and states |
-| 8 | [Responsive Design](#8-responsive-design) | Breakpoints and responsive layouts |
-| 9 | [Responsive Images](#9-responsive-images) | `srcset`, `sizes` and image variants |
-| 10 | [Accessibility and Usability](#10-accessibility-and-usability) | Accessibility and usability features |
-| 11 | [Part 2 Feedback Implemented and Changelog](#11-part-2-feedback-implemented-and-changelog) | Part 2 feedback and development changes |
-| 12 | [Browser Developer Tools Testing](#12-browser-developer-tools-testing) | Test devices and checks |
-| 13 | [Screenshot Evidence](#13-screenshot-evidence) | Desktop, tablet and mobile evidence |
-| 14 | [Reflection](#14-reflection) | Learning reflection |
-| 15 | [References](#15-references) | Technical and accessibility sources |
-| 16 | [Final Part 3 Checklist](#16-final-part-3-checklist) | Submission verification |
+| 3 | [Project Structure](#3-project-structure) | Folders and files |
+| 4 | [Dynamic Content, Search and Sorting](#4-dynamic-content-search-and-sorting) | JavaScript-loaded services and projects |
+| 5 | [Forms, Validation and AJAX](#5-forms-validation-and-ajax) | Enquiry, contact and volunteer forms |
+| 6 | [Search Engine Optimisation](#6-search-engine-optimisation-seo) | On-page, off-page and technical SEO |
+| 7 | [Performance](#7-performance) | Page speed |
+| 8 | [Security](#8-security-measures) | Security measures |
+| 9 | [Accessibility](#9-accessibility) | Accessibility features |
+| 10 | [Testing](#10-testing) | Automated and manual tests |
+| 11 | [Deployment](#11-deployment) | Publishing the website |
+| 12 | [Part 2 Feedback Response Log](#12-part-2-feedback-response-log) | Feedback and the changes made |
+| 13 | [Changelog](#13-changelog) | Record of development |
+| 14 | [Challenges and Decisions](#14-challenges-and-decisions) | Design decisions and limits |
+| 15 | [References](#15-references) | Harvard references |
+| A | [Appendix: Part 2 Documentation](#appendix-part-2-documentation-retained) | Retained Part 2 notes and testing evidence |
 
 ## 1. Project Overview
 
-Hope Connect Foundation is a non-profit organisation website developed for the WEDE5020 module. Part 3 builds on the Part 2 website by adding dynamic content, search/filter/sort functionality, enquiry and contact form processing, SEO improvements, technical files and deployment-ready testing.
+Hope Connect Foundation is a non-profit organisation website developed for the WEDE5020 module. Part 1 produced the structure and content, Part 2 added the external stylesheet, responsive design and accessibility, and **Part 3 adds interactivity, search engine optimisation and working forms**.
 
-The Part 2 implementation focuses on a shared external stylesheet, consistent visual design, typography, Flexbox, CSS Grid, interactive states, responsive images, accessibility and testing across desktop, tablet and mobile screen sizes.
+Part 3 delivers:
+
+- **Dynamic content:** the Services and Projects pages are built by JavaScript from a data file, with live search, category filter and sorting.
+- **Forms:** a new `enquiry.html` page and an upgraded `contact.html` form, plus the volunteer sign-up form, with HTML and JavaScript validation, friendly error messages and AJAX submission.
+- **SEO:** unique titles and meta descriptions, one `h1` per page, descriptive image text, internal links, structured data, `robots.txt`, `sitemap.xml`, social sharing links and a keyword plan.
+- **Documentation:** this README with a Part 2 feedback response log, a dated changelog and updated references.
 
 ## 2. Website Pages
 
-| Page | File |
-|---|---|
-| Home | `index.html` |
-| About | `about.html` |
-| Services | `services.html` |
-| Projects | `projects.html` |
-| Gallery | `gallery.html` |
-| Get Involved | `get-involved.html` |
-| Contact | `contact.html` |
-| Service Enquiry | `enquiry.html` |
+| Page | File | Part 3 change |
+|---|---|---|
+| Home | `index.html` | Meta tags, structured data, one `h1` |
+| About | `about.html` | Meta tags |
+| Services | `services.html` | Dynamic, searchable, sortable list |
+| Projects | `projects.html` | Dynamic, searchable, sortable list |
+| Get Involved | `get-involved.html` | Volunteer form with validation and AJAX |
+| Gallery | `gallery.html` | Descriptive alt text and captions, correct `sizes` |
+| Enquiry | `enquiry.html` | **New page**: enquiry form with cost and availability response |
+| Contact | `contact.html` | Upgraded form: phone, message type, validation, AJAX |
+
+The Enquiry link was added to the navigation of every page.
 
 ## 3. Project Structure
 
 ```text
 st10502254wede5020/
-├── index.html
-├── about.html
-├── services.html
-├── projects.html
-├── gallery.html
-├── get-involved.html
-├── contact.html
-├── enquiry.html
-├── robots.txt
-├── sitemap.xml
+├── index.html, about.html, services.html, projects.html
+├── gallery.html, get-involved.html, contact.html
+├── enquiry.html                 (new)
+├── robots.txt                   (new)
+├── sitemap.xml                  (new)
+├── _headers                     (new: security headers for Netlify)
 ├── README.md
 ├── css/
-│   └── style.css
+│   └── style.css                (Part 3 additions at the end)
 ├── js/
-│   └── script.js
+│   ├── script.js                (navigation, back-to-top, lightbox)
+│   ├── data.js                  (new: services and projects data)
+│   ├── dynamic.js               (new: render, search, filter, sort)
+│   └── forms.js                 (new: validation, AJAX, email)
+├── tests/
+│   ├── unit.test.js             (new: logic tests, no installs needed)
+│   └── e2e.test.js              (new: browser tests with Playwright)
+├── tools/
+│   ├── rename_images.py         (new: descriptive image file names)
+│   ├── set_site_url.py          (new: update the site address in one step)
+│   └── GIT_COMMIT_PLAN.md       (new: suggested commit sequence)
 ├── images/
-│   ├── responsive/
-│   ├── testing-desktop-home-1920x1080.png
-│   ├── testing-desktop-about-1366x768.png
-│   ├── testing-tablet-services-1024x768.png
-│   ├── testing-tablet-projects-768x1024.png
-│   ├── testing-mobile-gallery-390x844.png
-│   └── testing-mobile-contact-375x667.png
+│   └── responsive/
 └── wireframes/
 ```
 
-## 4. External CSS Stylesheet
+## 4. Dynamic Content, Search and Sorting
 
-All eight website pages use the shared external stylesheet:
+**Requirement 2.2:** use JavaScript to load content dynamically and implement search to filter and sort content.
+
+| Item | How it works |
+|---|---|
+| Data | `js/data.js` holds four services and five projects (title, category, icon, description, cost, availability). |
+| Rendering | `js/dynamic.js` creates a card for each item with `createElement` and `textContent` (no `innerHTML`). |
+| Search | A search box filters by every word typed across title, category and description, with a 150 ms delay while typing. |
+| Filter | A category list is built from the data, so it stays correct when items are added. |
+| Sort | Name A to Z, Name Z to A, or Category. |
+| Feedback | A live count ("Showing 2 of 4 services") and a clear message when nothing matches. |
+| Links | Each card links to `enquiry.html?type=...&item=...`, which pre-selects the enquiry type and fills the subject. |
+| Without JavaScript | The original static list is kept inside `<noscript>`, so the content is still readable. |
+
+To add a service or project, add one object to `js/data.js`. The cards, categories and counts update by themselves.
+
+> The costs and availability in `js/data.js` are sample figures for this assignment. Replace them with the organisation's real details.
+
+## 5. Forms, Validation and AJAX
+
+### 5.1 Forms
+
+| Form | Page | Fields |
+|---|---|---|
+| Enquiry | `enquiry.html` | Full name, email, phone, enquiry type (services, projects, volunteering, sponsorship, other), preferred date, subject, enquiry, consent |
+| Contact | `contact.html` | Full name, email, phone (optional), message type, subject, message, consent |
+| Volunteer | `get-involved.html` | Full name, email, volunteering activity |
+
+All fields use the correct HTML elements: `input` (text, email, tel, date, checkbox), `select` and `textarea`, each with a `label`.
+
+### 5.2 Validation rules
+
+| Field | HTML validation | JavaScript validation and message |
+|---|---|---|
+| Full name | `required`, `minlength=2`, `maxlength=60` | Letters, spaces, hyphens and apostrophes only |
+| Email | `type=email`, `required`, `maxlength=100` | Valid format, for example name@example.com |
+| Phone | `type=tel`, `pattern`, `maxlength=16` | South African format such as 073 123 4567 or +27 73 123 4567 |
+| Date | `type=date`, `min` = today | Format YYYY-MM-DD, real calendar date, not in the past |
+| Subject | `required`, `minlength=5`, `maxlength=100` | Length message with the number of characters entered |
+| Message | `required`, `minlength=20`, `maxlength=1000` | Length message and a live character counter |
+| Type | `required` select | "Please choose an option" |
+| Consent | `required` checkbox | Must be ticked |
+
+**User-friendly errors:** each message appears beside the field it belongs to, the field gets a red outline, `aria-invalid` and `aria-describedby` are set for screen readers, the first invalid field receives focus, and a summary says how many fields need fixing. Messages disappear as soon as the problem is corrected.
+
+### 5.3 AJAX submission
+
+`js/forms.js` stops the normal submit, validates, builds the email and sends the data with `fetch` (JSON `POST`), so the page does not reload. A "Sending..." state prevents double submits, and a 10-second timeout prevents the form hanging.
+
+- **Success:** a confirmation appears. On the enquiry form it also shows a **response about cost or availability** based on the chosen enquiry type and date (for example, Sunday dates explain that the organisation is closed).
+- **Failure:** a friendly error appears, the details stay in the form, and a link offers to send the message from the visitor's own email app (`mailto:`).
+
+### 5.4 Compiling the email
+
+Each submission is compiled into an email with a subject and body (form, name, email, phone, type, date, subject, message and a timestamp). The recipient is set in one place in `js/forms.js`:
+
+```js
+var CONFIG = {
+  recipient: "contact@hopeconnectfoundation.org",   // who receives the messages
+  endpoint: "https://formspree.io/f/YOUR_FORM_ID",   // replace YOUR_FORM_ID
+  ...
+};
+```
+
+**Set-up (about five minutes):**
+
+1. Create a free form at https://formspree.io and set its notification email to the recipient address.
+2. Copy the form address into `CONFIG.endpoint` and put the same address in `CONFIG.recipient`.
+3. Submit a test enquiry and confirm that the email arrives.
+
+Until the endpoint is configured the forms run in **demo mode**: they validate, build the email and show it on screen, but nothing is delivered. The page says so clearly.
+
+## 6. Search Engine Optimisation (SEO)
+
+### 6.1 Keyword research
+
+Keywords were chosen from the organisation's real focus areas and the phrases a volunteer or donor in South Africa would search for. Search volumes were **not** measured; validate and refine this list with Google Trends or Google Keyword Planner.
+
+| Page | Primary keyword | Supporting keywords |
+|---|---|---|
+| Home | community outreach South Africa | volunteer opportunities, non-profit organisation |
+| About | about Hope Connect Foundation | NGO mission, community volunteers |
+| Services | community workshops | environmental consulting, fundraising assistance for NGOs |
+| Projects | tree planting volunteers | youth mentorship programme, food drives South Africa |
+| Get Involved | volunteer South Africa | volunteer sign up, community clean-up |
+| Gallery | community clean-up photos | food drive photos, charity gallery |
+| Contact | contact Hope Connect Foundation | charity contact South Africa |
+| Enquiry | sponsor a charity | volunteer enquiry, services cost and availability |
+
+### 6.2 On-page SEO
+
+| Page | Title tag | Meta description length |
+|---|---|---|
+| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 154 |
+| about.html | About Us \| Hope Connect Foundation | 146 |
+| services.html | Our Services \| Hope Connect Foundation | 149 |
+| projects.html | Our Projects \| Hope Connect Foundation | 134 |
+| get-involved.html | Get Involved \| Hope Connect Foundation | 148 |
+| gallery.html | Gallery \| Hope Connect Foundation | 131 |
+| contact.html | Contact Us \| Hope Connect Foundation | 138 |
+| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 146 |
+
+- **Titles and descriptions:** every page has a unique title (under 70 characters) and a unique description under 160 characters containing its primary keyword.
+- **Headings:** every page has exactly one `h1` (the site name in the header; the hero headings on Home and Projects were changed to `h2`), then `h2` sections and `h3` items in order.
+- **Images:** all images have `alt` text. The 72 gallery images now have descriptive alt text and matching captions that describe what the picture shows (the earlier text was generated from file names). Generic file names such as `pic.jpg` and `hul.webp` are replaced with descriptive names by `tools/rename_images.py` (see 6.5).
+- **URLs:** short, lowercase, hyphenated page names with no parameters (`services.html`, `get-involved.html`).
+- **Internal linking:** every page links to every other page through the navigation, service and project cards link to the enquiry form, and the enquiry page links to Services, Projects, Get Involved and Contact.
+- **Mobile-friendly:** viewport tag, responsive breakpoints and responsive images (Part 2), checked again at 375 px for all eight pages.
+- **Open Graph and canonical tags** give search engines and social networks the right title, description and address for each page.
+- **Structured data:** an `NGO` schema (JSON-LD) on the home page gives search engines the organisation name, address of the site, description and service area.
+
+### 6.3 Off-page SEO
+
+| Area | Plan |
+|---|---|
+| Backlinks | Ask partner organisations, schools, local business forums, volunteer-matching websites and local community pages to link to the site; list the site in non-profit directories; share project stories with local news and community blogs. |
+| Social media | Every page has Share links for Facebook, WhatsApp, LinkedIn and X. Plan: post each project and volunteer day with a photo, a short story and a link to `enquiry.html` or `get-involved.html`. |
+| Local SEO | Titles, descriptions, language (`en_ZA`) and the structured data target South Africa. Next steps: add the organisation's street address and a correct phone number to the Contact page, claim a Google Business Profile with identical name, address and phone details, and ask partners for local reviews. |
+
+> Backlinks and social posts depend on actions outside the code. Record the real links and posts here once they exist.
+
+### 6.4 Technical SEO files
+
+- **`robots.txt`** allows all crawlers, blocks `/tools/` and `/wireframes/`, and points to the sitemap.
+- **`sitemap.xml`** lists all eight pages with `lastmod`, `changefreq` and `priority`.
+- Run `python tools/set_site_url.py https://your-site-address/` to update the canonical tags, sitemap and robots file when the final address is known.
+
+> Search engines only read `robots.txt` at the root of a domain. A project page on GitHub Pages (`username.github.io/repository/`) is served below the root, so on GitHub Pages the file is present but ignored by crawlers. Deploying to Netlify, where the site is served from the root, avoids this.
+
+### 6.5 Image file names
+
+`tools/rename_images.py` renames 72 images and their resized copies to descriptive names (for example `hope-connect-volunteers-sorting-donated-goods-boxes-large.jpg`) and updates every reference. It runs as a dry run by default; use `--apply` to make the changes. It was tested on a copy of the project structure: all 72 images and 192 resized files were renamed and every image reference still resolved.
+
+## 7. Performance
+
+| Improvement | Detail |
+|---|---|
+| Gallery `sizes` attribute | The gallery told the browser each thumbnail was up to 1200 px wide, so it chose the 1440 px copies. It now declares a quarter of the viewport on desktop. Estimated from file sizes, loading all 72 thumbnails dropped from about 19.6 MB (1440 px copies) to about 4.8 MB (480 px copies). |
+| Lazy loading | All 72 gallery images use `loading="lazy"`, so only visible images are fetched first. |
+| Responsive images | `srcset` with 480, 960 and 1440 px versions (Part 2). |
+| Small scripts | The three new scripts total under 25 KB with no libraries or frameworks. |
+| Next steps | Remove or compress the original full-size images (about 103 MB in `images/`), convert photos to WebP or AVIF, and add `loading="lazy"` to images lower down on other pages. |
+
+## 8. Security Measures
+
+- **Input validation** on the client (HTML and JavaScript) and **length limits** on every field. Client-side checks improve usability but can be bypassed, so the form service or server must validate again.
+- **Output safety:** page content and visitor input are written with `textContent`, never `innerHTML`, which prevents script injection.
+- **Spam protection:** a hidden honeypot field is ignored by people and silently rejects bots.
+- **No secrets in the code:** only a public form endpoint is used; the recipient address is the only configuration.
+- **Safe links:** external links use `rel="noopener noreferrer"`.
+- **Security headers:** the `_headers` file sets `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy` on Netlify. GitHub Pages ignores this file.
+- **HTTPS:** provided automatically by GitHub Pages and Netlify.
+- **Recommended next steps:** add a Content Security Policy and Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet.
+
+### Privacy and POPIA considerations
+
+The website collects personal information through the contact, enquiry and volunteer forms. The forms therefore include a consent checkbox and collect only information needed to respond to the visitor. The project should be deployed with HTTPS, access to submitted form data should be limited to authorised staff, and the organisation should publish a clear privacy notice explaining what information is collected, why it is collected, how long it is retained and how visitors can request access or correction. The current static website does not itself provide a full backend privacy-management system; the selected form-processing provider must therefore also be configured and reviewed for appropriate data protection.
+
+## 9. Accessibility
+
+New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; and `prefers-reduced-motion` is respected.
+
+## 10. Testing
+
+### 10.1 Automated tests
+
+| Suite | Command | Result (9 October 2026) |
+|---|---|---|
+| Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed |
+| Browser tests (Chromium via Playwright): dynamic cards, search and sort, empty and invalid forms, successful and failed AJAX submission, preselected enquiry type, honeypot, volunteer form, no horizontal scroll at 375 px on all pages, no JavaScript errors | `python -m http.server 8765` then `node tests/e2e.test.js` | **Not executed in this final verification environment: Playwright package is not installed.** The test file is included and ready to run after `npm install playwright`. |
+
+### 10.2 Manual test checklist
+
+The manual checklist below is retained as evidence guidance. It must be completed against the deployed site before claiming live-browser or live-email results.
+
+| Test | Chrome | Edge | Firefox | Phone | Tablet |
+|---|---|---|---|---|---|
+| Navigation and links | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Services search, filter and sort | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Projects search, filter and sort | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Enquiry form: errors, success, response | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Contact form: errors, success | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Volunteer form | [ ] | [ ] | [ ] | [ ] | [ ] |
+| Live site loads, images show, forms deliver email | [ ] | [ ] | [ ] | [ ] | [ ] |
+
+## 11. Deployment
+
+**GitHub Pages:** repository Settings, Pages, Source: Deploy from a branch, branch `main`, folder `/ (root)`. The project documentation currently uses `https://ramabushac.github.io/st10502254wede5020/` as the intended GitHub Pages address, but the final live deployment should still be opened and verified before submission.
+
+**Netlify:** add a new site from the GitHub repository (no build command, publish directory is the project folder). Netlify serves the site from the root, so `robots.txt` and `sitemap.xml` work as intended and the `_headers` file applies.
+
+After deploying: open every page on the live address, submit each form, check that images load, then update the **Live website** link at the top of this README and run `tools/set_site_url.py` with the final address.
+
+## 12. Part 2 Feedback Response Log
+
+The Part 2 rubric scored the submission 87/100. Marks were lost in three documentation criteria, and each is addressed below.
+
+| Feedback (Part 2 rubric) | Score | Action taken in Part 3 | Evidence |
+|---|---|---|---|
+| Feedback for Part 1: changes based on feedback need more detail and a fuller changelog | 3 / 10 | Added this feedback response log, which lists each piece of feedback, the change made and where to find it. | Section 12 |
+| GitHub: changelog section contains a record of development | 0 / 5 | Added a dedicated Changelog with version numbers, dates, categories (Added, Changed, Fixed) and the real commit messages from the Git history. | Section 13 |
+| GitHub: README contains all relevant information | 4 / 5 | Restructured the README with a table of contents, set-up steps, validation rules, SEO plan, performance, security, testing, deployment and updated references. | Whole README |
+| Strong areas to keep: external stylesheet, default styles, typography, layout, decoration and colour, pseudo-classes, media queries, layout, typography, navigation and image adjustments, commits and references (full marks) | 10 / 10 each | New styles reuse the existing colour variables and tokens; new controls have hover, focus-visible and active states; new breakpoints at 800 px and 520 px; commits remain small and descriptive; new references use the same Harvard format. | `css/style.css`, section 15 |
+
+**Part 1 feedback:** the Part 2 README recorded the changes made after Part 1 but did not quote the feedback itself.
+
+> **Remaining evidence item:** the exact Part 1 lecturer feedback should be pasted here if the lecturer provided written comments. The Part 3 response log should not invent feedback that is not available. The Part 2 score and documented weaknesses are retained as the baseline for the Part 3 improvements.
+
+## 13. Changelog
+
+All notable changes to this project are recorded here, newest first. The format follows Keep a Changelog, and the commit messages are taken from the Git history of this repository.
+
+### [3.0.0] - 2026-10-09 (Part 3)
+
+**Added**
+- `enquiry.html` with a validated enquiry form that shows a cost or availability response.
+- `js/data.js` and `js/dynamic.js`: Services and Projects built dynamically, with search, category filter and sorting.
+- `js/forms.js`: validation with friendly messages, AJAX submission with `fetch`, email compilation, timeout and `mailto:` fallback.
+- Contact form fields for phone number and message type; consent checkboxes; honeypot spam field.
+- `robots.txt`, `sitemap.xml`, `_headers`, canonical, Open Graph and Twitter tags, JSON-LD structured data.
+- Share links (Facebook, WhatsApp, LinkedIn, X) in every footer.
+- Unit and browser tests in `tests/`; `tools/rename_images.py`, `tools/set_site_url.py` and `tools/GIT_COMMIT_PLAN.md`.
+
+**Changed**
+- Unique title and meta description on all eight pages; Enquiry link added to every navigation menu.
+- Home and Projects hero headings changed from `h1` to `h2` so each page has one `h1`.
+- Volunteer sign-up form now uses the same validation and AJAX submission.
+- Gallery `sizes` attribute corrected so the browser loads smaller image copies.
+- `script.js` no longer handles forms managed by `forms.js`.
+- README rebuilt for Part 3, with the Part 2 notes kept in the appendix.
+
+**Fixed**
+- Gallery alt text and captions were generated from file names (for example "Alexander Simonsen 44Al1Glfvxo Unsplash"); they now describe each picture.
+- Added the missing meta descriptions on all seven original pages.
+- Added the missing changelog and feedback response log (see section 12).
+
+### [2.1.0] - 2026-09-18 (Part 2 finalisation)
+
+- Rename website screenshots
+- Add Part 2 audit, accessibility fixes and assets
+- Add device screenshots
+- Add testing screenshots; update README
+- Move testing screenshots and clean up docs
+- Rename validation doc
+- Refine audit document title
+- Rename browser testing image assets
+- Create desktop-home-1920x1080.png
+- Move testing screenshots and update docs
+- Finalize Part 2 README and validation docs
+- Finalize submission docs and screenshots
+
+### [2.0.0] - 2026-09-09 to 2026-09-17 (Part 2 development)
+
+- 2026-09-09: Improvement; improved project; Update review and add wireframes
+- 2026-09-11: Enhance gallery and responsive styling
+- 2026-09-12: Add enhancement layer, wireframes and optimized images
+- 2026-09-13: Enhance site accessibility and responsive layout
+- 2026-09-17: Add responsive assets and final cleanup
+
+### [1.1.0] - 2026-08-14 to 2026-08-28 (Part 1 refinements)
+
+- 2026-08-14: coment; picture
+- 2026-08-28: Add nav stylesheet and link
+
+### [1.0.0] - 2026-08-13 (Part 1)
+
+- Initial commit
+
+## 14. Challenges and Decisions
+
+- **Static hosting has no server.** A static site cannot send email by itself, so the forms post to a form service (Formspree) and keep a `mailto:` fallback. The recipient is set in one place.
+- **Demo mode.** Until the endpoint is configured the forms do not deliver anything and say so, rather than pretending to send.
+- **Data in JavaScript.** Keeping services and projects in `data.js` makes the cards, categories and counts update automatically, with a `<noscript>` fallback.
+- **Image descriptions.** Earlier alt text came from file names. Writing real descriptions for 72 images took the most time and gives the biggest accessibility and SEO gain.
+- **Image quality check.** Some gallery images should be reviewed before final submission: one stock photo carries a visible agency watermark, one image is a UK health-campaign poster, one is a personal photo, and several images are duplicated. Confirm that each has a licence or permission, and remove or replace those that do not.
+- **Sample content.** Prices, availability and sponsorship amounts are sample figures and must be replaced with real information.
+
+## 15. References
+
+Google. (n.d.) *SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 9 October 2026).
+
+Google. (n.d.) *Introduction to robots.txt*. Available at: https://developers.google.com/search/docs/crawling-indexing/robots/intro (Accessed: 9 October 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *Client-side form validation: Constraint validation*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation (Accessed: 9 October 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *Using the Fetch API*. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (Accessed: 9 October 2026).
+
+OWASP Foundation. (n.d.) *Cross Site Scripting Prevention Cheat Sheet*. Available at: https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html (Accessed: 9 October 2026).
+
+Sitemaps.org. (n.d.) *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html (Accessed: 9 October 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *CSS Grid Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 18 September 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *CSS Flexible Box Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout (Accessed: 18 September 2026).
+
+Mozilla Developer Network (MDN) Web Docs. (n.d.) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Performance/Responsive_images (Accessed: 18 September 2026).
+
+World Wide Web Consortium (W3C). (n.d.) *CSS Snapshot*. Available at: https://www.w3.org/TR/css/ (Accessed: 18 September 2026).
+
+World Wide Web Consortium (W3C). (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 18 September 2026).
+
+## Final verification status
+
+The merged Part 3 package was checked on 12 October 2026 before final packaging. The following static checks passed:
+
+- 8 HTML pages present, including the new Enquiry page.
+- Exactly one `h1` found on each HTML page.
+- No missing local HTML, CSS, JavaScript, link or image references were detected by the package audit.
+- No images were found without `alt` text in the HTML audit.
+- Unit test suite: **33 passed, 0 failed**.
+- Playwright E2E suite is included but was **not executed in this verification environment because the `playwright` Node package is not installed**. It must be run after installing the dependency.
+- Live deployment and live email delivery were not claimed as verified.
+
+This distinction is intentional so that the README does not report tests or live functionality that have not actually been demonstrated.
+
+## Appendix: Part 2 Documentation (retained)
+
+The sections below are the Part 2 documentation, kept so the earlier testing evidence and screenshots stay linked.
+
+### A1. External CSS Stylesheet
+
+All seven website pages use the shared external stylesheet:
 
 `css/style.css`
 
@@ -96,7 +425,7 @@ The stylesheet provides:
 - Reduced-motion support
 - Print-friendly styling
 
-## 5. Typography
+### A2. Typography
 
 Typography was styled using CSS properties including:
 
@@ -106,9 +435,9 @@ Typography was styled using CSS properties including:
 - `line-height`
 - `letter-spacing`
 
-Relative units such as `rem`, `em`, `%`, `vw` and `vh` are used for responsive sizing and spacing. `clamp()` is used where appropriate to allow text and spacing to scale between screen sizes (MDN Web Docs, n.d.-a).
+Relative units such as `rem`, `em`, `%`, `vw` and `vh` are used for responsive sizing and spacing. `clamp()` is used where appropriate to allow text and spacing to scale between screen sizes.
 
-## 6. Layout Design
+### A3. Layout Design
 
 The website uses both Flexbox and CSS Grid to create flexible desktop and responsive layouts.
 
@@ -128,7 +457,7 @@ The website uses both Flexbox and CSS Grid to create flexible desktop and respon
 
 Larger layouts reduce to fewer columns or a single column on smaller screens to improve readability and usability.
 
-## 7. Visual Styling and Interaction
+### A4. Visual Styling and Interaction
 
 The visual design uses:
 
@@ -144,11 +473,11 @@ The visual design uses:
 
 These styles provide visual hierarchy and clear feedback when users interact with navigation links, buttons, forms and gallery elements.
 
-## 8. Responsive Design
+### A5. Responsive Design
 
 The website was designed to respond to desktop, tablet and mobile screen sizes.
 
-### Breakpoints
+#### Breakpoints
 
 | Device | Breakpoint |
 |---|---|
@@ -170,7 +499,7 @@ Responsive design includes:
 - Mobile-friendly cards, forms and gallery layouts
 - Prevention of unnecessary horizontal scrolling
 
-## 9. Responsive Images
+### A6. Responsive Images
 
 Responsive image techniques were added using `srcset` and `sizes` attributes. Resized image variants are stored in:
 
@@ -178,7 +507,7 @@ Responsive image techniques were added using `srcset` and `sizes` attributes. Re
 
 The browser is able to select a suitable image resource based on the available display size and device resolution. This improves responsive presentation and avoids loading a larger image than necessary where an appropriate alternative is available.
 
-## 10. Accessibility and Usability
+### A7. Accessibility and Usability
 
 Accessibility and usability were considered throughout the website. Features include:
 
@@ -192,68 +521,11 @@ Accessibility and usability were considered throughout the website. Features inc
 - Reduced-motion support
 - Responsive layouts for different devices
 
-## 11. Part 2 Feedback Implemented and Changelog
-
-Part 2 was awarded **87/100 (Level 4)**. The strongest areas were the shared external CSS, desktop styling, responsive breakpoints, responsive navigation and images, pseudo-classes and references. The Part 3 work keeps these successful areas rather than replacing the design.
-
-The main Part 2 weaknesses were documentation and evidence: **3/10 for responding to Part 1 feedback**, **4/5 for README completeness**, and **0/5 for the changelog**. Part 3 addresses these points directly.
-
-### Part 2 feedback implemented in Part 3
-
-| Part 2 feedback area | Part 3 action | Evidence in this project |
-|---|---|---|
-| Feedback for Part 1: 3/10 | Added a clearer record of feedback, changes and reasons for changes. | This section and the dated Part 3 changelog below. |
-| README: 4/5 | Corrected the page count, added the Part 3 page, dynamic-content details, form processing, SEO, security, testing and deployment notes. | `README.md` |
-| Changelog: 0/5 | Added a detailed development record with dates, changes, reasons and affected files. | Part 3 Changelog section. |
-| Strong CSS and responsive work from Part 2 | Retained the existing shared stylesheet, responsive breakpoints, typography, layout, navigation and image handling. | `css/style.css` and all HTML pages. |
-
-The following changes were made during the Part 2 development and enhancement process.
-
-### CSS and Visual Design
-
-- Created and maintained the shared external `css/style.css` stylesheet.
-- Linked the external stylesheet to all eight website pages.
-- Added a consistent colour palette and typography system.
-- Added consistent spacing, borders, shadows and visual hierarchy.
-- Applied CSS Grid to project, service and gallery layouts.
-- Applied Flexbox to navigation and responsive content structures.
-- Added `:hover`, `:focus-visible` and `:active` interaction states.
-
-### Responsive Design
-
-- Added desktop, tablet and mobile breakpoints.
-- Applied relative units including `rem`, `em`, `%`, `vw` and `vh`.
-- Added `clamp()` for responsive typography and spacing.
-- Improved navigation behaviour on smaller screens.
-- Changed multi-column layouts to fewer columns or single-column layouts at smaller widths.
-- Improved cards, forms, project sections and gallery layouts for smaller screens.
-
-### Images and Accessibility
-
-- Improved image presentation and responsive sizing.
-- Added `srcset` and `sizes` attributes for responsive images.
-- Added resized image variants in `images/responsive/`.
-- Improved image framing and object fitting.
-- Added skip navigation and keyboard focus indicators.
-- Added reduced-motion support.
-- Improved form control sizing, labels and usability.
-
-### Project Maintenance
-
-- Removed the obsolete `css/# mystyle.css` file.
-- Corrected HTML structure and image markup issues identified during technical checking.
-- Confirmed that all eight website pages are included, including the Part 3 service enquiry page.
-- Confirmed that the project wireframes are included.
-- Confirmed that the supplied project image collection is used throughout the website.
-- Added desktop, tablet and mobile responsive-testing evidence to the `images/` folder.
-- Linked all testing images directly from this README.
-- Consolidated the Part 2 documentation into this README to avoid duplicate README files.
-
-## 12. Browser Developer Tools Testing
+### A8. Browser Developer Tools Testing
 
 The website was tested using browser Developer Tools with device emulation enabled. Testing confirms that the website remains usable and visually consistent at different viewport sizes.
 
-### Required Test Viewports
+#### Required Test Viewports
 
 | Device category | Viewport | Page used for evidence |
 |---|---:|---|
@@ -277,11 +549,11 @@ During testing, the following were checked:
 - Spacing and alignment
 - Breakpoint transitions
 
-## 13. Screenshot Evidence
+### A9. Screenshot Evidence
 
 The responsive testing screenshots are stored together in the main `images/` folder. They are linked directly below using relative paths so that they display when the README is viewed in the project repository or directly from the extracted project folder.
 
-### Desktop Testing
+#### Desktop Testing
 
 **Figure 1: Home page tested at 1920 × 1080.**
 
@@ -291,7 +563,7 @@ The responsive testing screenshots are stored together in the main `images/` fol
 
 <img src="./images/testing-desktop-about-1366x768.png" alt="Hope Connect Foundation About page tested at 1366 by 768 desktop viewport" width="900">
 
-### Tablet Testing
+#### Tablet Testing
 
 **Figure 3: Services page tested at 1024 × 768.**
 
@@ -301,7 +573,7 @@ The responsive testing screenshots are stored together in the main `images/` fol
 
 <img src="./images/testing-tablet-projects-768x1024.png" alt="Hope Connect Foundation Projects page tested at 768 by 1024 tablet viewport" width="700">
 
-### Mobile Testing
+#### Mobile Testing
 
 **Figure 5: Gallery page tested at 390 × 844.**
 
@@ -311,7 +583,7 @@ The responsive testing screenshots are stored together in the main `images/` fol
 
 <img src="./images/testing-mobile-contact-375x667.png" alt="Hope Connect Foundation Contact page tested at 375 by 667 mobile viewport" width="375">
 
-### Testing Checks
+#### Testing Checks
 
 The responsive testing covered:
 
@@ -326,168 +598,7 @@ The responsive testing covered:
 - Spacing and alignment
 - Breakpoint changes between desktop, tablet and mobile layouts
 
-## 14. Reflection
+---
 
-Through this project, I gained practical experience in applying CSS styling principles and responsive web design techniques. I learned how Flexbox and CSS Grid can be used to create flexible layouts and how responsive design improves the user experience across different devices. I also developed a better understanding of accessibility considerations and how small design choices can make websites easier to use for a wider range of users.
-
-The testing process also helped me identify layout and presentation issues at smaller screen sizes. I used the results to adjust navigation, spacing, typography, cards and image presentation so that the website remains usable across different viewport sizes.
-
-## 15. References
-
-MDN Web Docs. (n.d.-a) *CSS Grid Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout (Accessed: 9 October 2026).
-
-MDN Web Docs. (n.d.-b) *<h1>–<h6>: The HTML section heading elements*. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/Heading_Elements (Accessed: 9 October 2026).
-
-MDN Web Docs. (n.d.-c) *Responsive images*. Available at: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Performance/Responsive_images (Accessed: 9 October 2026).
-
-MDN Web Docs. (n.d.-d) *CSS Flexible Box Layout*. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout (Accessed: 9 October 2026).
-
-World Wide Web Consortium (W3C). (n.d.) *CSS Snapshot*. Available at: https://www.w3.org/TR/css/ (Accessed: 9 October 2026).
-
-World Wide Web Consortium (W3C). (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 9 October 2026).
-
-**WEDE5020 - Hope Connect Foundation**  
+**WEDE5020 Part 3 - Hope Connect Foundation**  
 **Student Number: ST10502254**
-
-## 16. Final Part 3 Checklist
-
-The final Part 3 submission should contain all eight HTML pages, the shared CSS and JavaScript, images, technical SEO files, README and supporting project folders. Before uploading or submitting the GitHub link, the following should be checked:
-
-- All eight pages open and use the shared stylesheet.
-- Every page has one clear primary H1 and a logical H2/H3 structure.
-- Dynamic Services content, search, filtering and sorting work in the browser.
-- Both required forms pass HTML and JavaScript validation.
-- AJAX form processing is tested on the deployed HTTPS site.
-- The actual deployment URL is added to `robots.txt` and `sitemap.xml`.
-- Mobile, tablet and desktop layouts are checked using browser Developer Tools.
-- Image `alt` text describes meaningful image content and decorative images are handled appropriately.
-- GitHub contains descriptive commits and the README changelog is updated.
-- Any off-page SEO claims are supported by real evidence rather than assumed activity.
-
-## 17. Part 3 Dynamic Content
-
-The Services page now loads service information from a JavaScript data array rather than hard-coding the service cards in the HTML. Users can:
-
-- Search services by name, category or description.
-- Filter services by category.
-- Sort services from A-Z or Z-A.
-- See the result count update without reloading the page.
-
-The rendering code uses DOM methods such as `createElement()` and `textContent`, which avoids inserting untrusted search text as HTML.
-
-## 18. Part 3 Forms
-
-### Service Enquiry
-
-`enquiry.html` allows visitors to enquire about:
-
-- Services
-- Products or resources
-- Volunteering
-- Sponsorship
-
-The form collects contact details, enquiry type, preferred date, budget/cost information and a message. HTML constraints and JavaScript validation check required fields, email format, phone format, message length and the selected date.
-
-### Contact Form
-
-`contact.html` collects:
-
-- Full name
-- Email address
-- Phone number
-- Message type
-- Full message
-
-Both forms use asynchronous `fetch()` submission to an email-processing endpoint. The recipient is specified in `js/script.js` as `contact@hopeconnectfoundation.org`. If the email service is unavailable, the user receives an error message and an email fallback address instead of being shown a false success message.
-
-## 19. Part 3 SEO
-
-Each page has a unique:
-
-- `<title>`
-- Meta description
-- Keyword set
-- Author metadata
-
-The website uses descriptive headings, internal links, descriptive image alternative text, responsive images, mobile-friendly layouts and clean `.html` page names (MDN Web Docs, n.d.-b; MDN Web Docs, n.d.-c).
-
-Target keyword themes include community development, volunteering, youth mentorship, environmental projects, education support, sponsorship and community services in South Africa.
-
-### Off-page SEO plan
-
-The project does not claim backlinks or social-media promotion that have not been created or verified. For deployment, the organisation can promote the website through its verified social-media profiles, partner organisations, community directories and relevant non-profit networks. Any completed backlinks or social profiles should be recorded as evidence rather than listed as assumed results.
-
-Local SEO should also only be claimed after the organisation's actual service location and a verified business/location profile have been confirmed.
-
-## 20. Technical SEO and Performance
-
-The project includes:
-
-- `robots.txt`
-- `sitemap.xml`
-- Lazy loading for gallery/project images
-- Asynchronous image decoding
-- Responsive image `srcset` and `sizes` (MDN Web Docs, n.d.-c)
-- Minimal client-side JavaScript
-- Shared CSS and JavaScript files
-- Keyboard-accessible controls
-- HTTPS-ready external form processing when deployed on an HTTPS host
-
-Before final deployment, replace `YOUR-DEPLOYED-DOMAIN.example` in `robots.txt` and `sitemap.xml` with the actual deployed website address. The placeholder is intentionally retained until the real hosting URL is known; no unverified domain is claimed in the submission.
-
-## 21. Security Measures
-
-The site applies basic static-site security practices:
-
-- Client-side validation for user input.
-- HTML constraints for field length and formats.
-- Safe DOM rendering using `textContent` for dynamic service content.
-- No passwords, API keys or other secrets stored in the project.
-- HTTPS should be used for the deployed website.
-- Hidden honeypot fields are included on the contact and enquiry forms to reduce simple automated spam.
-- The external Google Maps link uses `noopener noreferrer`.
-- Form errors are displayed without exposing technical details to visitors.
-
-## 22. Part 3 Changelog
-
-| Date | Change | Reason / feedback addressed | Files affected |
-|---|---|---|---|
-| 2026-10-08 | Added JavaScript-driven Services data, search, category filtering and A-Z/Z-A sorting. | Meets the Part 3 dynamic-content and search/filter/sort requirements. | `services.html`, `js/script.js`, `css/style.css` |
-| 2026-10-08 | Added Service Enquiry page with cost, availability and next-step feedback. | Meets the Part 3 enquiry-form requirement. | `enquiry.html`, `js/script.js` |
-| 2026-10-08 | Added AJAX processing for contact and enquiry forms with validation and fallback messaging. | Meets asynchronous form-processing requirements without displaying a false success message when the endpoint fails. | `contact.html`, `enquiry.html`, `js/script.js` |
-| 2026-10-08 | Added SEO metadata, robots file and sitemap. | Addresses Part 3 on-page and technical SEO requirements. | All HTML pages, `robots.txt`, `sitemap.xml` |
-| 2026-10-08 | Added responsive image handling, lazy loading and asynchronous decoding. | Supports performance and mobile-friendly requirements while preserving the Part 2 image work. | HTML pages, `js/script.js`, `images/` |
-| 2026-10-09 | Corrected duplicate H1 headings on Home and Projects. | Improves heading hierarchy and directly addresses the on-page SEO requirement. | `index.html`, `projects.html` |
-| 2026-10-09 | Corrected Gallery statistics from 7 to 8 website pages. | Keeps project documentation accurate after adding `enquiry.html`. | `gallery.html`, `README.md` |
-| 2026-10-09 | Expanded the Part 2 feedback record and added a detailed Part 3 changelog. | Directly addresses the Part 2 scores of 3/10 for feedback implementation, 4/5 for README completeness and 0/5 for changelog evidence. | `README.md` |
-| 2026-10-09 | Added hidden honeypot fields to the contact and enquiry forms. | Adds a basic anti-spam measure for the static-site forms. | `contact.html`, `enquiry.html`, `css/style.css` |
-
-## 23. Part 3 Testing Checklist
-
-Before submission, test:
-
-1. All eight pages open without broken local links.
-2. Services load dynamically.
-3. Service search filters results without a page refresh.
-4. Category filtering works.
-5. A-Z and Z-A sorting works.
-6. Enquiry validation rejects missing/invalid data.
-7. Enquiry date cannot be in the past.
-8. Contact validation rejects missing/invalid data.
-9. AJAX form success and error states are visible.
-10. Mobile and desktop layouts remain usable.
-11. `robots.txt` and `sitemap.xml` use the real deployed domain.
-12. The deployed site is available over HTTPS.
-13. Git commits are descriptive and the README/changelog is updated.
-14. Live AJAX email delivery is tested after deployment; static source inspection alone is not treated as proof of successful delivery.
-15. Lighthouse/PageSpeed results are recorded after deployment if required as submission evidence.
-16. The real deployed URL is inserted into `robots.txt` and `sitemap.xml` before final submission.
-17. The final GitHub repository and deployed URL are tested before LMS submission.
-
-## 24. Part 3 Submission Note
-
-The project is based directly on the Part 2 source supplied for this submission. Part 2 functionality, pages, image collection, responsive CSS, accessibility features and gallery behaviour were retained while Part 3 functionality was added.
-
-### About Page Image Correction
-- Updated the Meet the Team image styling so the portrait photographs display at their natural aspect ratios instead of being forced into a 240px-high cropped frame.
-- This prevents faces and other important parts of the team photographs from being cut off on the About page.
