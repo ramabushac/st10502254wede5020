@@ -1,0 +1,11 @@
+# robots.txt for Hope Connect Foundation (WEDE5020 Part 3)
+# All search engines may crawl the whole site.
+User-agent: *
+Allow: /
+
+# Keep crawlers out of non-content folders
+Disallow: /tools/
+Disallow: /wireframes/
+
+# Location of the sitemap (update the address if the site moves)
+Sitemap: https://ramabushac.github.io/st10502254wede5020/sitemap.xml

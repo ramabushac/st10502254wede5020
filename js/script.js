@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Client-side validation and confirmation for project forms.
-  document.querySelectorAll("form").forEach(form => {
+  document.querySelectorAll("form:not([data-ajax-form])").forEach(form => {
     form.addEventListener("submit", e => {
       if (!form.checkValidity()) {
         e.preventDefault();

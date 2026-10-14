@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects - Hope Connect Foundation</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Our Projects | Hope Connect Foundation</title>
+  <meta name="description" content="Explore our education, green future, youth mentorship, feeding and health projects. Search the projects and find out how to take part.">
+  <meta name="keywords" content="tree planting volunteers, youth mentorship programme, food drives South Africa, community health events">
+  <meta name="author" content="Hope Connect Foundation">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b141b">
+  <link rel="canonical" href="https://ramabushac.github.io/st10502254wede5020/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hope Connect Foundation">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Our Projects | Hope Connect Foundation">
+  <meta property="og:description" content="Explore our education, green future, youth mentorship, feeding and health projects. Search the projects and find out how to take part.">
+  <meta property="og:image" content="https://ramabushac.github.io/st10502254wede5020/images/hope-connect-title-slide-hope-connect-foundation-project.png">
+  <meta property="og:image:alt" content="Hope Connect Foundation community outreach image">
+  <meta property="og:url" content="https://ramabushac.github.io/st10502254wede5020/projects.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ramabushac.github.io/st10502254wede5020/images/hope-connect-title-slide-hope-connect-foundation-project.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <img src="images/logo.png" alt="HopeConnect Foundation Logo" srcset="images/responsive/logo-480.png 480w, images/responsive/logo-960.png 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
+  <img src="images/hope-connect-title-slide-hope-connect-foundation-project.png" alt="HopeConnect Foundation Logo" srcset="images/responsive/hope-connect-title-slide-hope-connect-foundation-project-480.png 480w, images/responsive/hope-connect-title-slide-hope-connect-foundation-project-960.png 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
   <h1>Hope Connect Foundation</h1>
 </header>
 
@@ -23,6 +40,7 @@
     <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
     <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
     <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-question-circle"></i><span>Enquiry</span></a>
     <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </div>
 </nav>
@@ -30,11 +48,11 @@
   <main id="main-content">
 
 <section class="hero">
-  <h1>Stronger Together — Empowering Communities Through Action</h1>
+  <h2>Stronger Together — Empowering Communities Through Action</h2>
 </section>
 
 <section class="section">
-  <img src="images/community.jpeg" alt="Community Work" srcset="images/responsive/community-480.jpeg 480w, images/responsive/community-960.jpeg 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
+  <img src="images/hope-connect-volunteers-blue-shirts-serving-food-outdoor.jpeg" alt="Community Work" srcset="images/responsive/hope-connect-volunteers-blue-shirts-serving-food-outdoor-480.jpeg 480w, images/responsive/hope-connect-volunteers-blue-shirts-serving-food-outdoor-960.jpeg 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
 </section>
 
 <section class="section">
@@ -47,8 +65,33 @@
 <section class="section">
   <h2>Our Projects</h2>
   <p>We believe action speaks louder than words. Here’s how we’re making a difference:</p>
-
-  <div class="project">
+<div class="catalog" id="projects-catalog" data-catalog="projects">
+    <h2>Find a Project</h2>
+    <p>Type a keyword, pick a category or change the order. The list updates instantly.</p>
+    <div class="catalog-controls">
+      <div>
+        <label for="projects-search">Search projects</label>
+        <input type="search" id="projects-search" data-role="search" placeholder="e.g. workshop, trees, food" maxlength="60" autocomplete="off">
+      </div>
+      <div>
+        <label for="projects-category">Category</label>
+        <select id="projects-category" data-role="category"><option value="all">All categories</option></select>
+      </div>
+      <div>
+        <label for="projects-sort">Sort by</label>
+        <select id="projects-sort" data-role="sort">
+          <option value="az">Name (A to Z)</option>
+          <option value="za">Name (Z to A)</option>
+          <option value="category">Category</option>
+        </select>
+      </div>
+      <button type="button" class="btn-secondary" data-role="reset">Reset</button>
+    </div>
+    <p class="catalog-count" data-role="count" aria-live="polite"></p>
+    <div class="catalog-grid" data-role="list" aria-live="polite" aria-busy="true"><p class="catalog-loading">Loading content...</p></div>
+    <noscript>
+      <p>JavaScript is turned off, so here is the full list.</p>
+      <div class="project">
     <h3>📚 Education for All</h3>
     <p>We provide free workshops, literacy classes, and tutoring for children and adults to bridge the education gap and empower individuals with skills for brighter futures.</p>
   </div>
@@ -72,6 +115,9 @@
     <h3>🏥 Health & Wellness</h3>
     <p>From medical check-ups to mental health awareness events and community fitness programs, we prioritize holistic well-being in the communities we serve.</p>
   </div>
+    </noscript>
+  </div>
+
 </section>
 
 <section class="section">
@@ -92,7 +138,11 @@
 
   <footer>
   <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
-</footer>
+  <p class="share-links">Share this page: <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fprojects.html" target="_blank" rel="noopener noreferrer">Facebook</a> <a href="https://wa.me/?text=Our%20Projects%20%7C%20Hope%20Connect%20Foundation%20https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fprojects.html" target="_blank" rel="noopener noreferrer">WhatsApp</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fprojects.html" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fprojects.html&amp;text=Our%20Projects%20%7C%20Hope%20Connect%20Foundation" target="_blank" rel="noopener noreferrer">X</a></p>
+    <p class="footer-utility"><a href="privacy.html">Privacy Notice</a> · <a href="contact.html">Contact</a></p>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/dynamic.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

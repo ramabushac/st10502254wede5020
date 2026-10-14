@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Involved - Hope Connect Foundation</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Get Involved | Hope Connect Foundation</title>
+  <meta name="description" content="Volunteer, mentor or support Hope Connect Foundation. Sign up online and join community clean-ups, food drives and youth programmes in South Africa.">
+  <meta name="keywords" content="volunteer sign up, volunteer South Africa, community clean-up, food drive volunteers, mentor youth">
+  <meta name="author" content="Hope Connect Foundation">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b141b">
+  <link rel="canonical" href="https://ramabushac.github.io/st10502254wede5020/get-involved.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hope Connect Foundation">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Get Involved | Hope Connect Foundation">
+  <meta property="og:description" content="Volunteer, mentor or support Hope Connect Foundation. Sign up online and join community clean-ups, food drives and youth programmes in South Africa.">
+  <meta property="og:image" content="https://ramabushac.github.io/st10502254wede5020/images/hope-connect-title-slide-hope-connect-foundation-project.png">
+  <meta property="og:image:alt" content="Hope Connect Foundation community outreach image">
+  <meta property="og:url" content="https://ramabushac.github.io/st10502254wede5020/get-involved.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ramabushac.github.io/st10502254wede5020/images/hope-connect-title-slide-hope-connect-foundation-project.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <header>
-  <img src="images/logo.png" alt="HopeConnect Foundation Logo" srcset="images/responsive/logo-480.png 480w, images/responsive/logo-960.png 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
+  <img src="images/hope-connect-title-slide-hope-connect-foundation-project.png" alt="HopeConnect Foundation Logo" srcset="images/responsive/hope-connect-title-slide-hope-connect-foundation-project-480.png 480w, images/responsive/hope-connect-title-slide-hope-connect-foundation-project-960.png 960w" sizes="(max-width: 767px) 100vw, (max-width: 1023px) 90vw, 1200px">
   <h1>Hope Connect Foundation</h1>
 </header>
 
@@ -23,6 +40,7 @@
     <a href="projects.html" data-page="projects.html"><i class="fas fa-briefcase"></i><span>Projects</span></a>
     <a href="get-involved.html" data-page="get-involved.html"><i class="fas fa-hands-helping"></i><span>Get Involved</span></a>
     <a href="gallery.html" data-page="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a>
+    <a href="enquiry.html" data-page="enquiry.html"><i class="fas fa-question-circle"></i><span>Enquiry</span></a>
     <a href="contact.html" data-page="contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a>
   </div>
 </nav>
@@ -60,16 +78,16 @@
   </section>
 
   <!-- Volunteer Sign-up Form -->
-  <form id="volunteerForm">
+  <form id="volunteerForm" data-ajax-form="volunteer" novalidate>
     <h3>Volunteer Sign-Up</h3>
     <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" placeholder="Your full name" required>
+    <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required minlength="2" maxlength="60" data-rule="name" data-label="Full name">
 
     <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" placeholder="Your email" required>
+    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required maxlength="100" data-rule="email" data-label="Email address">
 
     <label for="activity">Preferred Volunteering Activities</label>
-    <select id="activity" name="activity" required>
+    <select id="activity" name="activity" required data-label="Volunteering activity">
       <option value="" disabled selected>Select an activity</option>
       <option value="tree_planting">Tree Planting</option>
       <option value="food_drives">Food Drives</option>
@@ -78,8 +96,12 @@
       <option value="mentorship">Mentorship</option>
       <option value="community_events">Community Events</option>
     </select>
-
+    <div class="hp-field" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input class="hp-input" type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
     <button type="submit">Sign Up</button>
+    <div class="form-status" aria-live="polite" hidden></div>
   </form>
 </section>
 
@@ -88,7 +110,10 @@
 
   <footer>
   <p>&copy; 2026 Hope Connect Foundation. All rights reserved.</p>
-</footer>
+  <p class="share-links">Share this page: <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fget-involved.html" target="_blank" rel="noopener noreferrer">Facebook</a> <a href="https://wa.me/?text=Get%20Involved%20%7C%20Hope%20Connect%20Foundation%20https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fget-involved.html" target="_blank" rel="noopener noreferrer">WhatsApp</a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fget-involved.html" target="_blank" rel="noopener noreferrer">LinkedIn</a> <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Framabushac.github.io%2Fst10502254wede5020%2Fget-involved.html&amp;text=Get%20Involved%20%7C%20Hope%20Connect%20Foundation" target="_blank" rel="noopener noreferrer">X</a></p>
+    <p class="footer-utility"><a href="privacy.html">Privacy Notice</a> · <a href="contact.html">Contact</a></p>
+  </footer>
   <script src="js/script.js"></script>
+  <script src="js/forms.js"></script>
 </body>
 </html>
