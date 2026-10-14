@@ -5,11 +5,7 @@
 **Module:** WEDE5020  
 **Project:** Hope Connect Foundation Website  
 **Repository:** https://github.com/ramabushac/st10502254wede5020  
-<<<<<<< HEAD
 **Live website:** https://ramabushac.github.io/st10502254wede5020/ *(update this link if the site is deployed elsewhere)*
-=======
-**Live website:** https://ramabushac.github.io/st10502254wede5020/ 
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 ## Table of Contents
 
@@ -29,12 +25,7 @@
 | 12 | [Part 2 Feedback Response Log](#12-part-2-feedback-response-log) | Feedback and the changes made |
 | 13 | [Changelog](#13-changelog) | Record of development |
 | 14 | [Challenges and Decisions](#14-challenges-and-decisions) | Design decisions and limits |
-<<<<<<< HEAD
-| 15 | [Final Review Input](#15-final-review-input) | Final technical review and recommendations |
-| 16 | [References](#16-references) | Harvard references |
-=======
 | 15 | [References](#15-references) | Harvard references |
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 | A | [Appendix: Part 2 Documentation](#appendix-part-2-documentation-retained) | Retained Part 2 notes and testing evidence |
 | B | [Part 3 Review Improvements](#103-part-3-report-improvements-added) | Review/report changes and validation |
 
@@ -90,12 +81,8 @@ st10502254wede5020/
 │   └── forms.js                 (new: validation, AJAX, email)
 ├── tests/
 │   ├── unit.test.js             (new: logic tests, no installs needed)
-<<<<<<< HEAD
-│   └── e2e.test.js              (new: browser tests with Playwright)
-=======
 │   ├── e2e.test.js              (new: browser tests with Playwright)
 │   └── static.test.js           (new: SEO, accessibility and link checks, no installs needed)
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 ├── tools/
 │   ├── rename_images.py         (new: was used to rename the images; kept for reference)
 │   ├── set_site_url.py          (new: update the site address in one step)
@@ -199,24 +186,6 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 
 | Page | Title tag | Meta description length |
 |---|---|---|
-<<<<<<< HEAD
-| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 152 |
-| about.html | About Us \| Hope Connect Foundation | 143 |
-| services.html | Our Services \| Hope Connect Foundation | 146 |
-| projects.html | Our Projects \| Hope Connect Foundation | 135 |
-| get-involved.html | Get Involved \| Hope Connect Foundation | 149 |
-| gallery.html | Gallery \| Hope Connect Foundation | 129 |
-| contact.html | Contact Us \| Hope Connect Foundation | 134 |
-| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 147 |
-
-- **Titles and descriptions:** every page has a unique title (under 70 characters) and a unique description under 160 characters containing its primary keyword.
-- **Headings:** every page has exactly one `h1` (the site name in the header; the hero headings on Home and Projects were changed to `h2`), then `h2` sections and `h3` items in order.
-- **Images:** all images have `alt` text. The 72 gallery images now have descriptive alt text and matching captions that describe what the picture shows (the earlier text was generated from file names). Generic file names such as `pic.jpg` and `hul.webp` were replaced with descriptive names (see 6.5).
-- **URLs:** short, lowercase, hyphenated page names with no parameters (`services.html`, `get-involved.html`).
-- **Internal linking:** every page links to every other page through the navigation, service and project cards link to the enquiry form, and the enquiry page links to Services, Projects, Get Involved and Contact.
-- **Mobile-friendly:** viewport tag, responsive breakpoints and responsive images (Part 2), checked again at 375 px for the main interactive pages.
-- **Open Graph and canonical tags** give search engines and social networks the right title, description and address for each page.
-=======
 | index.html | Hope Connect Foundation \| Community Outreach in South Africa | 154 |
 | about.html | About Us \| Hope Connect Foundation | 146 |
 | services.html | Our Services \| Hope Connect Foundation | 149 |
@@ -233,7 +202,6 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 - **Internal linking:** every page links to every other page through the navigation, service and project cards link to the enquiry form, and the enquiry page links to Services, Projects, Get Involved and Contact.
 - **Mobile-friendly:** viewport tag, responsive breakpoints and responsive images (Part 2), checked again at 375 px for all eight pages.
 - **Open Graph, Twitter Card and canonical tags** give search engines and social networks the right title, description, address and a preview image (`og:image`) for each page.
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 - **Structured data:** an `NGO` schema (JSON-LD) on the home page gives search engines the organisation name, address of the site, description and service area.
 
 ### 6.3 Off-page SEO
@@ -266,12 +234,8 @@ All 72 original images and their 192 resized copies in `images/responsive/` now 
 | Lazy loading | All 72 gallery images use `loading="lazy"`, so only visible images are fetched first. |
 | Responsive images | `srcset` with 480, 960 and 1440 px versions (Part 2). |
 | Small scripts | The three new scripts total under 25 KB with no libraries or frameworks. |
-<<<<<<< HEAD
-| Next steps | Remove or compress the original full-size images (about 103 MB in `images/`), convert photos to WebP or AVIF, and add `loading="lazy"` to images lower down on other pages. |
-=======
 | Original image compression | 44 originals over 300 KB were limited to 2400 px on the long side and recompressed (about 50 MB down to 27 MB). The `images/` folder is about 39 MB, down from about 100 MB; the 480, 960 and 1440 px copies were not changed. |
 | Next steps | Convert photos to WebP or AVIF, add `width` and `height` attributes to reduce layout shift (check the CSS first, because some images are sized by CSS), and add `loading="lazy"` to images lower down on other pages. |
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 ## 8. Security Measures
 
@@ -282,13 +246,6 @@ All 72 original images and their 192 resized copies in `images/responsive/` now 
 - **Safe links:** external links use `rel="noopener noreferrer"`.
 - **Security headers:** the `_headers` file sets `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy` on Netlify. GitHub Pages ignores this file.
 - **HTTPS:** provided automatically by GitHub Pages and Netlify.
-<<<<<<< HEAD
-- **Recommended next steps:** add a Content Security Policy and Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet.
-
-## 9. Accessibility
-
-New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; and `prefers-reduced-motion` is respected.
-=======
 - **Content Security Policy:** `_headers` now sends a `Content-Security-Policy-Report-Only` header (scripts and styles from the site and cdnjs only, form posts to Formspree only, no framing). It is report-only because it has not been tested on a live Netlify deployment; check the browser console, then rename it to `Content-Security-Policy`. No page uses inline `style` attributes or inline scripts, so the policy should not need `unsafe-inline`.
 - **Caching:** `_headers` also sets cache lifetimes for images, CSS and JavaScript on Netlify.
 - **Recommended next step:** add Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet using the hash published by cdnjs.
@@ -296,23 +253,15 @@ New features follow the Part 2 approach: every control has a visible `label`; er
 ## 9. Accessibility
 
 New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; decorative icons carry `aria-hidden="true"`; the gallery viewer moves focus to its close button when it opens, keeps Tab inside the viewer, locks page scrolling and returns focus to the thumbnail when it closes; and `prefers-reduced-motion` is respected.
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 ## 10. Testing
 
 ### 10.1 Automated tests
 
-<<<<<<< HEAD
-| Suite | Command | Result (14 October 2026) |
-|---|---|---|
-| Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed |
-| Static site checks: metadata, accessibility, local references, sitemap coverage and documentation consistency | `node tests/static.test.js` | 761 passed, 0 failed, 2 warnings |
-=======
 | Suite | Command | Result (9 October 2026) |
 |---|---|---|
 | Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed (re-run 14 October 2026) |
 | Static site checks: 10 pages for lang, title and description length and uniqueness, one unique `h1`, alt text, unique ids, labels on every form control, local links and `srcset` files, sitemap coverage, Open Graph image | `node tests/static.test.js` | 880 passed, 0 failed, 2 warnings (14 October 2026) |
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 | Browser tests (Chromium via Playwright): dynamic cards, search and sort, empty and invalid forms, successful and failed AJAX submission, preselected enquiry type, honeypot, volunteer form, no horizontal scroll at 375 px on all pages, no JavaScript errors | `python -m http.server 8765` then `node tests/e2e.test.js` | **Not run in this environment: Playwright package is not installed** |
 
 ### 10.2 Manual test checklist
@@ -362,49 +311,14 @@ The Part 2 rubric scored the submission 87/100. Marks were lost in three documen
 | GitHub: README contains all relevant information | 4 / 5 | Restructured the README with a table of contents, set-up steps, validation rules, SEO plan, performance, security, testing, deployment and updated references. | Whole README |
 | Strong areas to keep: external stylesheet, default styles, typography, layout, decoration and colour, pseudo-classes, media queries, layout, typography, navigation and image adjustments, commits and references (full marks) | 10 / 10 each | New styles reuse the existing colour variables and tokens; new controls have hover, focus-visible and active states; new breakpoints at 800 px and 520 px; commits remain small and descriptive; new references use the same Harvard format. | `css/style.css`, section 15 |
 
-<<<<<<< HEAD
 **Part 1 feedback:** the Part 2 README recorded the changes made after Part 1 but did not quote the feedback itself.
 
 > TODO (student): paste the Part 1 lecturer feedback below, one line each, and write what you changed for it. Example: *Feedback: "Alt text is too short." Change: rewrote alt text on all images (see Changelog 3.0.0).*
-=======
-**Part 1 feedback: the Part 2 README recorded the improvements made after Part 1 but did not preserve the original lecturer comments verbatim.
-
-The available evidence for Part 1 feedback was the Part 2 rubric and assessment outcome. Consequently, the improvements documented in this project are based on the rubric criteria, lecturer scoring, and the areas identified for improvement in Part 2. No additional written Part 1 feedback was available at the time of preparing this Part 3 submission.
-
-The changes implemented in response to the identified areas for improvement include:
-
-• Addition of a detailed feedback response log.
-• Introduction of a comprehensive project changelog.
-• Expansion of the README to include setup, testing, deployment, SEO, accessibility, security and validation documentation.
-• Improved evidence of responsive testing and project verification.
-• Additional technical documentation and project audit records.
-
-These changes were implemented to address the documentation-related weaknesses identified in the Part 2 assessment and to provide a more complete record of the project's development process.*
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 ## 13. Changelog
 
 All notable changes to this project are recorded here, newest first. The format follows Keep a Changelog, and the commit messages are taken from the Git history of this repository.
 
-<<<<<<< HEAD
-### [3.2.0] - 2026-10-14 (Final technical review input)
-
-**Added**
-- `tests/static.test.js`: dependency-free static checks covering metadata, accessibility, local references, sitemap coverage and documentation consistency.
-- `FINAL_REVIEW_AND_RECOMMENDATIONS.md`: final review findings and the remaining manual submission checks.
-- Open Graph image, image alt text and Twitter image metadata on the indexable pages.
-
-**Changed**
-- Standardised Font Awesome to version 6.5.2 across all HTML pages.
-- Corrected README and sitemap documentation to distinguish the nine indexable pages from `404.html`.
-- Recorded the static test result: 761 passed, 0 failed, 2 warnings.
-
-**Still requires student verification**
-- Formspree live endpoint and actual email delivery.
-- Image licensing/permission for supplied images.
-- Lighthouse results on the deployed website.
-- Playwright browser results if required by the rubric.
-=======
 ### [3.2.0] - 2026-10-14 (Part 3 analysis and improvements)
 
 **Added**
@@ -421,7 +335,6 @@ All notable changes to this project are recorded here, newest first. The format 
 
 **Removed**
 - Unused form-handling branch in `js/script.js` (all three forms are handled by `js/forms.js`).
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 ### [3.1.0] - 2026-10-14 (Part 3 review improvements)
 
@@ -505,27 +418,7 @@ All notable changes to this project are recorded here, newest first. The format 
 - **Image quality check.** Some gallery images should be reviewed before final submission: one stock photo carries a visible agency watermark, one image is a UK health-campaign poster, one is a personal photo, and several images are duplicated. Confirm that each has a licence or permission, and remove or replace those that do not.
 - **Sample content.** Prices, availability and sponsorship amounts are sample figures and must be replaced with real information.
 
-<<<<<<< HEAD
-## 15. Final Review Input
-
-A final technical review was completed against the supplied Part 3 assessment/report and the project files. The review kept the strongest existing work and added low-risk improvements rather than changing the project unnecessarily.
-
-Key review decisions:
-
-- Keep the dynamic Services and Projects features, search, filtering, sorting and enquiry links because they directly demonstrate Part 3 JavaScript requirements.
-- Keep the validation, AJAX structure, honeypot and mailto fallback, but clearly label the current Formspree endpoint as demo mode until a real endpoint is configured and tested.
-- Keep the privacy notice and custom 404 page because they improve completeness and user experience without changing the main design.
-- Standardise Font Awesome to version 6.5.2 across the HTML pages so the documentation and implementation agree.
-- Add a dependency-free static test suite so the README claim about automated static checks is supported by an actual file in the submission.
-- Keep Lighthouse, live form delivery, image licensing and Playwright browser results as outstanding verification items rather than inventing results.
-- Preserve the `.git` repository in the full project copy so the lecturer can inspect the development history.
-
-The remaining manual checks should be completed by the student on the actual deployed site before submission, especially browser/device testing, live form delivery if required, and confirmation that all images are permitted for use.
-
-## 16. References
-=======
 ## 15. References
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
 
 Google. (n.d.) *SEO Starter Guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide (Accessed: 9 October 2026).
 

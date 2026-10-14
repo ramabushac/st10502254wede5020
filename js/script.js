@@ -84,33 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-<<<<<<< HEAD
-  // Client-side validation and confirmation for project forms.
-  document.querySelectorAll("form:not([data-ajax-form])").forEach(form => {
-    form.addEventListener("submit", e => {
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        form.reportValidity();
-        return;
-      }
-      if (form.id === "volunteerForm" || form.classList.contains("contact-form-element")) {
-        e.preventDefault();
-        let message = form.querySelector(".form-message");
-        if (!message) {
-          message = document.createElement("p");
-          message.className = "form-message";
-          form.appendChild(message);
-        }
-        message.textContent = form.id === "volunteerForm"
-          ? "Thank you for registering as a volunteer. We will contact you with the next steps."
-          : "Thank you for contacting Hope Connect Foundation. Your message has been prepared successfully.";
-        message.style.display = "block";
-        form.reset();
-      }
-    });
-  });
-=======
->>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
   // Image quality/performance enhancement: mark orientation and lazy-load
   // gallery images while keeping the original high-resolution files for lightbox.
   document.querySelectorAll(".gallery img, .project-images img").forEach(img => {
