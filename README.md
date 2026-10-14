@@ -12,7 +12,7 @@
 | No. | Section | Description |
 |---|---|---|
 | 1 | [Project Overview](#1-project-overview) | Purpose and Part 3 focus |
-| 2 | [Website Pages](#2-website-pages) | Eight website pages |
+| 2 | [Website Pages](#2-website-pages) | Main website pages and support pages |
 | 3 | [Project Structure](#3-project-structure) | Folders and files |
 | 4 | [Dynamic Content, Search and Sorting](#4-dynamic-content-search-and-sorting) | JavaScript-loaded services and projects |
 | 5 | [Forms, Validation and AJAX](#5-forms-validation-and-ajax) | Enquiry, contact and volunteer forms |
@@ -27,6 +27,7 @@
 | 14 | [Challenges and Decisions](#14-challenges-and-decisions) | Design decisions and limits |
 | 15 | [References](#15-references) | Harvard references |
 | A | [Appendix: Part 2 Documentation](#appendix-part-2-documentation-retained) | Retained Part 2 notes and testing evidence |
+| B | [Part 3 Review Improvements](#103-part-3-report-improvements-added) | Review/report changes and validation |
 
 ## 1. Project Overview
 
@@ -51,8 +52,10 @@ Part 3 delivers:
 | Gallery | `gallery.html` | Descriptive alt text and captions, correct `sizes` |
 | Enquiry | `enquiry.html` | **New page**: enquiry form with cost and availability response |
 | Contact | `contact.html` | Upgraded form: phone, message type, validation, AJAX |
+| Privacy Notice | `privacy.html` | New support page explaining form data, demo mode and privacy considerations |
+| Error page | `404.html` | New recovery page for missing URLs; excluded from indexing |
 
-The Enquiry link was added to the navigation of every page.
+The Enquiry link was added to the navigation of every main website page. Privacy Notice is available from the footer.
 
 ## 3. Project Structure
 
@@ -61,10 +64,14 @@ st10502254wede5020/
 ├── index.html, about.html, services.html, projects.html
 ├── gallery.html, get-involved.html, contact.html
 ├── enquiry.html                 (new)
+├── privacy.html                 (new)
+├── 404.html                     (new)
+├── favicon.svg                  (new)
 ├── robots.txt                   (new)
 ├── sitemap.xml                  (new)
 ├── _headers                     (new: security headers for Netlify)
 ├── README.md
+├── PART3_REPORT_IMPROVEMENTS.md  (review/report improvement record)
 ├── css/
 │   └── style.css                (Part 3 additions at the end)
 ├── js/
@@ -76,7 +83,7 @@ st10502254wede5020/
 │   ├── unit.test.js             (new: logic tests, no installs needed)
 │   └── e2e.test.js              (new: browser tests with Playwright)
 ├── tools/
-│   ├── rename_images.py         (new: descriptive image file names)
+│   ├── rename_images.py         (new: was used to rename the images; kept for reference)
 │   ├── set_site_url.py          (new: update the site address in one step)
 │   └── GIT_COMMIT_PLAN.md       (new: suggested commit sequence)
 ├── images/
@@ -178,18 +185,18 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 
 | Page | Title tag | Meta description length |
 |---|---|---|
-| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 154 |
-| about.html | About Us \| Hope Connect Foundation | 146 |
-| services.html | Our Services \| Hope Connect Foundation | 149 |
-| projects.html | Our Projects \| Hope Connect Foundation | 134 |
-| get-involved.html | Get Involved \| Hope Connect Foundation | 148 |
-| gallery.html | Gallery \| Hope Connect Foundation | 131 |
-| contact.html | Contact Us \| Hope Connect Foundation | 138 |
-| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 146 |
+| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 152 |
+| about.html | About Us \| Hope Connect Foundation | 143 |
+| services.html | Our Services \| Hope Connect Foundation | 146 |
+| projects.html | Our Projects \| Hope Connect Foundation | 135 |
+| get-involved.html | Get Involved \| Hope Connect Foundation | 149 |
+| gallery.html | Gallery \| Hope Connect Foundation | 129 |
+| contact.html | Contact Us \| Hope Connect Foundation | 134 |
+| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 147 |
 
 - **Titles and descriptions:** every page has a unique title (under 70 characters) and a unique description under 160 characters containing its primary keyword.
 - **Headings:** every page has exactly one `h1` (the site name in the header; the hero headings on Home and Projects were changed to `h2`), then `h2` sections and `h3` items in order.
-- **Images:** all images have `alt` text. The 72 gallery images now have descriptive alt text and matching captions that describe what the picture shows (the earlier text was generated from file names). Generic file names such as `pic.jpg` and `hul.webp` are replaced with descriptive names by `tools/rename_images.py` (see 6.5).
+- **Images:** all images have `alt` text. The 72 gallery images now have descriptive alt text and matching captions that describe what the picture shows (the earlier text was generated from file names). Generic file names such as `pic.jpg` and `hul.webp` were replaced with descriptive names (see 6.5).
 - **URLs:** short, lowercase, hyphenated page names with no parameters (`services.html`, `get-involved.html`).
 - **Internal linking:** every page links to every other page through the navigation, service and project cards link to the enquiry form, and the enquiry page links to Services, Projects, Get Involved and Contact.
 - **Mobile-friendly:** viewport tag, responsive breakpoints and responsive images (Part 2), checked again at 375 px for all eight pages.
@@ -216,7 +223,7 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 
 ### 6.5 Image file names
 
-`tools/rename_images.py` renames 72 images and their resized copies to descriptive names (for example `hope-connect-volunteers-sorting-donated-goods-boxes-large.jpg`) and updates every reference. It runs as a dry run by default; use `--apply` to make the changes. It was tested on a copy of the project structure: all 72 images and 192 resized files were renamed and every image reference still resolved.
+All 72 original images and their 192 resized copies in `images/responsive/` now have descriptive names, for example `hope-connect-volunteers-sorting-donated-goods-boxes-large.jpg`. The renaming was done with `tools/rename_images.py`, which also updated every reference in the HTML, CSS and README files; the script then confirmed that every referenced image exists. The script is kept for reference and runs as a dry run unless `--apply` is given.
 
 ## 7. Performance
 
@@ -239,10 +246,6 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 - **HTTPS:** provided automatically by GitHub Pages and Netlify.
 - **Recommended next steps:** add a Content Security Policy and Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet.
 
-### Privacy and POPIA considerations
-
-The website collects personal information through the contact, enquiry and volunteer forms. The forms therefore include a consent checkbox and collect only information needed to respond to the visitor. The project should be deployed with HTTPS, access to submitted form data should be limited to authorised staff, and the organisation should publish a clear privacy notice explaining what information is collected, why it is collected, how long it is retained and how visitors can request access or correction. The current static website does not itself provide a full backend privacy-management system; the selected form-processing provider must therefore also be configured and reviewed for appropriate data protection.
-
 ## 9. Accessibility
 
 New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; and `prefers-reduced-motion` is respected.
@@ -254,11 +257,11 @@ New features follow the Part 2 approach: every control has a visible `label`; er
 | Suite | Command | Result (9 October 2026) |
 |---|---|---|
 | Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed |
-| Browser tests (Chromium via Playwright): dynamic cards, search and sort, empty and invalid forms, successful and failed AJAX submission, preselected enquiry type, honeypot, volunteer form, no horizontal scroll at 375 px on all pages, no JavaScript errors | `python -m http.server 8765` then `node tests/e2e.test.js` | **Not executed in this final verification environment: Playwright package is not installed.** The test file is included and ready to run after `npm install playwright`. |
+| Browser tests (Chromium via Playwright): dynamic cards, search and sort, empty and invalid forms, successful and failed AJAX submission, preselected enquiry type, honeypot, volunteer form, no horizontal scroll at 375 px on all pages, no JavaScript errors | `python -m http.server 8765` then `node tests/e2e.test.js` | **Not run in this environment: Playwright package is not installed** |
 
 ### 10.2 Manual test checklist
 
-The manual checklist below is retained as evidence guidance. It must be completed against the deployed site before claiming live-browser or live-email results.
+Complete this table with your own results before submission.
 
 | Test | Chrome | Edge | Firefox | Phone | Tablet |
 |---|---|---|---|---|---|
@@ -270,9 +273,23 @@ The manual checklist below is retained as evidence guidance. It must be complete
 | Volunteer form | [ ] | [ ] | [ ] | [ ] | [ ] |
 | Live site loads, images show, forms deliver email | [ ] | [ ] | [ ] | [ ] | [ ] |
 
+## 10.3 Part 3 Report Improvements Added
+
+The external review/report was used as a final quality check rather than as a reason to rebuild the site. The most useful low-risk improvements have been added:
+
+- **Privacy notice:** `privacy.html` explains the information requested by the forms, demo-mode limitations, security measures and the need for a fuller POPIA-aligned notice before real-world use.
+- **Custom 404 page:** `404.html` gives visitors a clear recovery path instead of a blank or generic missing-page response.
+- **Favicon:** `favicon.svg` gives the site a consistent browser-tab identity.
+- **Loading feedback:** Services and Projects now show a short loading message and use `aria-busy` while JavaScript renders the dynamic cards.
+- **Footer utility links:** the main pages now provide direct access to the Privacy Notice and Contact page.
+- **SEO:** the Privacy Notice is included in `sitemap.xml`; the 404 page is intentionally excluded from indexing.
+- **Image/content review note:** the project still contains supplied/sample images and some duplicated files. Their licensing/permission should be confirmed before a real public launch; no unsupported licence claim has been added to the README.
+
+Items that require a real deployment or external service, such as Lighthouse scores, live form delivery and verified image licences, are **not claimed as completed** until they are actually tested or confirmed.
+
 ## 11. Deployment
 
-**GitHub Pages:** repository Settings, Pages, Source: Deploy from a branch, branch `main`, folder `/ (root)`. The project documentation currently uses `https://ramabushac.github.io/st10502254wede5020/` as the intended GitHub Pages address, but the final live deployment should still be opened and verified before submission.
+**GitHub Pages:** repository Settings, Pages, Source: Deploy from a branch, branch `main`, folder `/ (root)`. The site address will be `https://<username>.github.io/<repository>/`.
 
 **Netlify:** add a new site from the GitHub repository (no build command, publish directory is the project folder). Netlify serves the site from the root, so `robots.txt` and `sitemap.xml` work as intended and the `_headers` file applies.
 
@@ -291,11 +308,26 @@ The Part 2 rubric scored the submission 87/100. Marks were lost in three documen
 
 **Part 1 feedback:** the Part 2 README recorded the changes made after Part 1 but did not quote the feedback itself.
 
-> **Remaining evidence item:** the exact Part 1 lecturer feedback should be pasted here if the lecturer provided written comments. The Part 3 response log should not invent feedback that is not available. The Part 2 score and documented weaknesses are retained as the baseline for the Part 3 improvements.
+> TODO (student): paste the Part 1 lecturer feedback below, one line each, and write what you changed for it. Example: *Feedback: "Alt text is too short." Change: rewrote alt text on all images (see Changelog 3.0.0).*
 
 ## 13. Changelog
 
 All notable changes to this project are recorded here, newest first. The format follows Keep a Changelog, and the commit messages are taken from the Git history of this repository.
+
+### [3.1.0] - 2026-10-14 (Part 3 review improvements)
+
+**Added**
+- `privacy.html` with a plain-language privacy notice and a clear explanation of the current demo-mode form limitation.
+- `404.html` with a recovery link back to the website.
+- `favicon.svg` for browser-tab identity.
+- Loading feedback and `aria-busy` state for dynamically rendered Services and Projects content.
+- Footer links to the Privacy Notice and Contact page.
+
+**Changed**
+- Added the Privacy Notice to `sitemap.xml`.
+- Updated this README to separate completed improvements from items that still require live deployment, external service configuration or licence confirmation.
+- Confirmed the automated unit suite locally: 33 passed, 0 failed.
+- Attempted the Playwright browser suite, but it could not run because the Playwright package is not installed in the current environment; no browser-test score is claimed.
 
 ### [3.0.0] - 2026-10-09 (Part 3)
 
@@ -307,6 +339,7 @@ All notable changes to this project are recorded here, newest first. The format 
 - `robots.txt`, `sitemap.xml`, `_headers`, canonical, Open Graph and Twitter tags, JSON-LD structured data.
 - Share links (Facebook, WhatsApp, LinkedIn, X) in every footer.
 - Unit and browser tests in `tests/`; `tools/rename_images.py`, `tools/set_site_url.py` and `tools/GIT_COMMIT_PLAN.md`.
+- Descriptive file names for all 72 images and their 192 resized copies.
 
 **Changed**
 - Unique title and meta description on all eight pages; Enquiry link added to every navigation menu.
@@ -320,6 +353,7 @@ All notable changes to this project are recorded here, newest first. The format 
 - Gallery alt text and captions were generated from file names (for example "Alexander Simonsen 44Al1Glfvxo Unsplash"); they now describe each picture.
 - Added the missing meta descriptions on all seven original pages.
 - Added the missing changelog and feedback response log (see section 12).
+- The lightbox image in `gallery.html` had an empty `src` attribute, which makes some browsers request the page twice; it now uses a tiny placeholder image.
 
 ### [2.1.0] - 2026-09-18 (Part 2 finalisation)
 
@@ -385,20 +419,6 @@ Mozilla Developer Network (MDN) Web Docs. (n.d.) *Responsive images*. Available 
 World Wide Web Consortium (W3C). (n.d.) *CSS Snapshot*. Available at: https://www.w3.org/TR/css/ (Accessed: 18 September 2026).
 
 World Wide Web Consortium (W3C). (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/ (Accessed: 18 September 2026).
-
-## Final verification status
-
-The merged Part 3 package was checked on 12 October 2026 before final packaging. The following static checks passed:
-
-- 8 HTML pages present, including the new Enquiry page.
-- Exactly one `h1` found on each HTML page.
-- No missing local HTML, CSS, JavaScript, link or image references were detected by the package audit.
-- No images were found without `alt` text in the HTML audit.
-- Unit test suite: **33 passed, 0 failed**.
-- Playwright E2E suite is included but was **not executed in this verification environment because the `playwright` Node package is not installed**. It must be run after installing the dependency.
-- Live deployment and live email delivery were not claimed as verified.
-
-This distinction is intentional so that the README does not report tests or live functionality that have not actually been demonstrated.
 
 ## Appendix: Part 2 Documentation (retained)
 

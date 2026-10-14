@@ -87,6 +87,7 @@
     function render() {
       var results = sortItems(filterItems(data, search.value, categorySelect.value), sortSelect.value);
       list.textContent = "";
+      list.setAttribute("aria-busy", "false");
       results.forEach(function (item) { list.appendChild(buildCard(item, type)); });
       if (!results.length) {
         list.appendChild(el("p", "catalog-empty", "No " + type + " match your search. Try a different word or choose All categories."));
