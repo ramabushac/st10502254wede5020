@@ -81,7 +81,8 @@ st10502254wede5020/
 │   └── forms.js                 (new: validation, AJAX, email)
 ├── tests/
 │   ├── unit.test.js             (new: logic tests, no installs needed)
-│   └── e2e.test.js              (new: browser tests with Playwright)
+│   ├── e2e.test.js              (new: browser tests with Playwright)
+│   └── static.test.js           (new: SEO, accessibility and link checks, no installs needed)
 ├── tools/
 │   ├── rename_images.py         (new: was used to rename the images; kept for reference)
 │   ├── set_site_url.py          (new: update the site address in one step)
@@ -185,22 +186,22 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 
 | Page | Title tag | Meta description length |
 |---|---|---|
-| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 152 |
-| about.html | About Us \| Hope Connect Foundation | 143 |
-| services.html | Our Services \| Hope Connect Foundation | 146 |
-| projects.html | Our Projects \| Hope Connect Foundation | 135 |
-| get-involved.html | Get Involved \| Hope Connect Foundation | 149 |
-| gallery.html | Gallery \| Hope Connect Foundation | 129 |
-| contact.html | Contact Us \| Hope Connect Foundation | 134 |
-| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 147 |
+| index.html | Hope Connect Foundation \| Community Outreach in South Africa | 154 |
+| about.html | About Us \| Hope Connect Foundation | 146 |
+| services.html | Our Services \| Hope Connect Foundation | 149 |
+| projects.html | Our Projects \| Hope Connect Foundation | 134 |
+| get-involved.html | Get Involved \| Hope Connect Foundation | 148 |
+| gallery.html | Gallery \| Hope Connect Foundation | 131 |
+| contact.html | Contact Us \| Hope Connect Foundation | 138 |
+| enquiry.html | Make an Enquiry \| Hope Connect Foundation | 146 |
 
 - **Titles and descriptions:** every page has a unique title (under 70 characters) and a unique description under 160 characters containing its primary keyword.
-- **Headings:** every page has exactly one `h1` (the site name in the header; the hero headings on Home and Projects were changed to `h2`), then `h2` sections and `h3` items in order.
+- **Headings:** every page has exactly one `h1` and it is unique to the page (About and Services keep their page title in the header; on the other pages the site name is now a styled paragraph and the page heading is the `h1`), then `h2` sections and `h3` items in order. Earlier versions repeated "Hope Connect Foundation" as the `h1` on six pages, which gives search engines no page-specific signal.
 - **Images:** all images have `alt` text. The 72 gallery images now have descriptive alt text and matching captions that describe what the picture shows (the earlier text was generated from file names). Generic file names such as `pic.jpg` and `hul.webp` were replaced with descriptive names (see 6.5).
 - **URLs:** short, lowercase, hyphenated page names with no parameters (`services.html`, `get-involved.html`).
 - **Internal linking:** every page links to every other page through the navigation, service and project cards link to the enquiry form, and the enquiry page links to Services, Projects, Get Involved and Contact.
 - **Mobile-friendly:** viewport tag, responsive breakpoints and responsive images (Part 2), checked again at 375 px for all eight pages.
-- **Open Graph and canonical tags** give search engines and social networks the right title, description and address for each page.
+- **Open Graph, Twitter Card and canonical tags** give search engines and social networks the right title, description, address and a preview image (`og:image`) for each page.
 - **Structured data:** an `NGO` schema (JSON-LD) on the home page gives search engines the organisation name, address of the site, description and service area.
 
 ### 6.3 Off-page SEO
@@ -233,7 +234,8 @@ All 72 original images and their 192 resized copies in `images/responsive/` now 
 | Lazy loading | All 72 gallery images use `loading="lazy"`, so only visible images are fetched first. |
 | Responsive images | `srcset` with 480, 960 and 1440 px versions (Part 2). |
 | Small scripts | The three new scripts total under 25 KB with no libraries or frameworks. |
-| Next steps | Remove or compress the original full-size images (about 103 MB in `images/`), convert photos to WebP or AVIF, and add `loading="lazy"` to images lower down on other pages. |
+| Original image compression | 44 originals over 300 KB were limited to 2400 px on the long side and recompressed (about 50 MB down to 27 MB). The `images/` folder is about 39 MB, down from about 100 MB; the 480, 960 and 1440 px copies were not changed. |
+| Next steps | Convert photos to WebP or AVIF, add `width` and `height` attributes to reduce layout shift (check the CSS first, because some images are sized by CSS), and add `loading="lazy"` to images lower down on other pages. |
 
 ## 8. Security Measures
 
@@ -244,11 +246,13 @@ All 72 original images and their 192 resized copies in `images/responsive/` now 
 - **Safe links:** external links use `rel="noopener noreferrer"`.
 - **Security headers:** the `_headers` file sets `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy` on Netlify. GitHub Pages ignores this file.
 - **HTTPS:** provided automatically by GitHub Pages and Netlify.
-- **Recommended next steps:** add a Content Security Policy and Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet.
+- **Content Security Policy:** `_headers` now sends a `Content-Security-Policy-Report-Only` header (scripts and styles from the site and cdnjs only, form posts to Formspree only, no framing). It is report-only because it has not been tested on a live Netlify deployment; check the browser console, then rename it to `Content-Security-Policy`. No page uses inline `style` attributes or inline scripts, so the policy should not need `unsafe-inline`.
+- **Caching:** `_headers` also sets cache lifetimes for images, CSS and JavaScript on Netlify.
+- **Recommended next step:** add Subresource Integrity (`integrity` attribute) for the Font Awesome stylesheet using the hash published by cdnjs.
 
 ## 9. Accessibility
 
-New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; and `prefers-reduced-motion` is respected.
+New features follow the Part 2 approach: every control has a visible `label`; errors are announced with `role="alert"`, `aria-invalid` and `aria-describedby`; the status message is an `aria-live` region and receives focus; the search results count is announced politely; hover, `:focus-visible` and `:active` states are used on all new controls; decorative icons carry `aria-hidden="true"`; the gallery viewer moves focus to its close button when it opens, keeps Tab inside the viewer, locks page scrolling and returns focus to the thumbnail when it closes; and `prefers-reduced-motion` is respected.
 
 ## 10. Testing
 
@@ -256,7 +260,8 @@ New features follow the Part 2 approach: every control has a visible `label`; er
 
 | Suite | Command | Result (9 October 2026) |
 |---|---|---|
-| Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed |
+| Unit tests: validation rules, email builder, cost and availability response, search, filter and sort | `node tests/unit.test.js` | 33 passed, 0 failed (re-run 14 October 2026) |
+| Static site checks: 10 pages for lang, title and description length and uniqueness, one unique `h1`, alt text, unique ids, labels on every form control, local links and `srcset` files, sitemap coverage, Open Graph image | `node tests/static.test.js` | 880 passed, 0 failed, 2 warnings (14 October 2026) |
 | Browser tests (Chromium via Playwright): dynamic cards, search and sort, empty and invalid forms, successful and failed AJAX submission, preselected enquiry type, honeypot, volunteer form, no horizontal scroll at 375 px on all pages, no JavaScript errors | `python -m http.server 8765` then `node tests/e2e.test.js` | **Not run in this environment: Playwright package is not installed** |
 
 ### 10.2 Manual test checklist
@@ -313,6 +318,23 @@ The Part 2 rubric scored the submission 87/100. Marks were lost in three documen
 ## 13. Changelog
 
 All notable changes to this project are recorded here, newest first. The format follows Keep a Changelog, and the commit messages are taken from the Git history of this repository.
+
+### [3.2.0] - 2026-10-14 (Part 3 analysis and improvements)
+
+**Added**
+- `tests/static.test.js`: 880 automated checks across all pages. Run against the previous version it reported 23 failures; it now reports 0 failures and 2 warnings.
+- `og:image`, `og:image:alt` and `twitter:image` tags with a `summary_large_image` card on every indexable page.
+- Gallery viewer focus management: focus moves into the viewer, Tab is kept inside it, page scroll is locked and focus returns to the thumbnail on close.
+- `Content-Security-Policy-Report-Only` and cache headers in `_headers`.
+- `REVIEW_PART3_ANALYSIS.md`: findings, fixes and the items still open.
+
+**Changed**
+- Each page now has its own unique `h1` (six pages previously repeated "Hope Connect Foundation").
+- `lang="en-ZA"` on every page; one Font Awesome version (6.5.2) on every page; decorative icons hidden from screen readers.
+- 44 original images recompressed (about 50 MB down to 27 MB); `sitemap.xml` dates refreshed; README meta description lengths corrected to match the pages.
+
+**Removed**
+- Unused form-handling branch in `js/script.js` (all three forms are handled by `js/forms.js`).
 
 ### [3.1.0] - 2026-10-14 (Part 3 review improvements)
 
