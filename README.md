@@ -311,9 +311,19 @@ The Part 2 rubric scored the submission 87/100. Marks were lost in three documen
 | GitHub: README contains all relevant information | 4 / 5 | Restructured the README with a table of contents, set-up steps, validation rules, SEO plan, performance, security, testing, deployment and updated references. | Whole README |
 | Strong areas to keep: external stylesheet, default styles, typography, layout, decoration and colour, pseudo-classes, media queries, layout, typography, navigation and image adjustments, commits and references (full marks) | 10 / 10 each | New styles reuse the existing colour variables and tokens; new controls have hover, focus-visible and active states; new breakpoints at 800 px and 520 px; commits remain small and descriptive; new references use the same Harvard format. | `css/style.css`, section 15 |
 
-**Part 1 feedback:** the Part 2 README recorded the changes made after Part 1 but did not quote the feedback itself.
+**Part 1 feedback: the Part 2 README recorded the improvements made after Part 1 but did not preserve the original lecturer comments verbatim.
 
-> TODO (student): paste the Part 1 lecturer feedback below, one line each, and write what you changed for it. Example: *Feedback: "Alt text is too short." Change: rewrote alt text on all images (see Changelog 3.0.0).*
+The available evidence for Part 1 feedback was the Part 2 rubric and assessment outcome. Consequently, the improvements documented in this project are based on the rubric criteria, lecturer scoring, and the areas identified for improvement in Part 2. No additional written Part 1 feedback was available at the time of preparing this Part 3 submission.
+
+The changes implemented in response to the identified areas for improvement include:
+
+• Addition of a detailed feedback response log.
+• Introduction of a comprehensive project changelog.
+• Expansion of the README to include setup, testing, deployment, SEO, accessibility, security and validation documentation.
+• Improved evidence of responsive testing and project verification.
+• Additional technical documentation and project audit records.
+
+These changes were implemented to address the documentation-related weaknesses identified in the Part 2 assessment and to provide a more complete record of the project's development process.*
 
 ## 13. Changelog
 
