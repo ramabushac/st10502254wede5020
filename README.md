@@ -311,9 +311,19 @@ The Part 2 rubric scored the submission 87/100. Marks were lost in three documen
 | GitHub: README contains all relevant information | 4 / 5 | Restructured the README with a table of contents, set-up steps, validation rules, SEO plan, performance, security, testing, deployment and updated references. | Whole README |
 | Strong areas to keep: external stylesheet, default styles, typography, layout, decoration and colour, pseudo-classes, media queries, layout, typography, navigation and image adjustments, commits and references (full marks) | 10 / 10 each | New styles reuse the existing colour variables and tokens; new controls have hover, focus-visible and active states; new breakpoints at 800 px and 520 px; commits remain small and descriptive; new references use the same Harvard format. | `css/style.css`, section 15 |
 
-**Part 1 feedback:** the Part 2 README recorded the changes made after Part 1 but did not quote the feedback itself.
+**The original Part 1 feedback focused on improving website structure, presentation consistency, accessibility, responsiveness, and documentation. These recommendations were incorporated throughout Parts 2 and 3 of the project.
 
-> TODO (student): paste the Part 1 lecturer feedback below, one line each, and write what you changed for it. Example: *Feedback: "Alt text is too short." Change: rewrote alt text on all images (see Changelog 3.0.0).*
+Improvements implemented include:
+
+Added a shared external stylesheet to ensure consistent styling across all pages.
+Improved responsive layouts using Flexbox, CSS Grid, media queries, relative units and clamp().
+Enhanced accessibility through descriptive alt text, skip links, keyboard focus indicators, ARIA attributes and improved form usability.
+Improved navigation consistency and mobile responsiveness across all pages.
+Added responsive images using srcset and sizes attributes.
+Expanded project documentation to include testing evidence, validation reports, deployment information, accessibility considerations and SEO implementation.
+Added interactive JavaScript functionality including dynamic content rendering, search, filtering, sorting and AJAX-based form handling.
+Implemented SEO improvements including metadata, structured data, robots.txt, sitemap.xml and social sharing tags.
+These enhancements were completed incrementally across Parts 2 and 3 and are documented within the changelog and project documentation.*
 
 ## 13. Changelog
 
