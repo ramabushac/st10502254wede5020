@@ -852,3 +852,15 @@ button[disabled] { opacity: .65; cursor: progress; }
 .footer-utility { margin-top: 8px !important; }
 .not-found { text-align: center; padding-block: clamp(60px, 12vw, 120px); }
 .not-found-code { font-size: clamp(4rem, 12vw, 8rem); line-height: 1; font-weight: 900; color: var(--accent); margin-bottom: 12px; }
+<<<<<<< HEAD
+=======
+
+
+/* ---------- Part 3 review: page-level headings and lightbox ---------- */
+/* The site name is now a styled paragraph so each page can have its own unique h1 */
+header .site-title { margin: 0 0 5px; font-size: clamp(1.7rem, 4vw, 2.7rem); font-weight: 700; letter-spacing: .02em; color: inherit; line-height: 1.2; }
+h1.page-title { color: var(--accent); font-size: clamp(1.5rem, 3vw, 2.2rem); margin-top: 0; line-height: 1.2; }
+.hero h1.page-title { max-width: 850px; font-size: clamp(2rem, 5vw, 3.5rem); margin: 0; }
+@media print { h1.page-title { color: #111; } }
+body.lightbox-open { overflow: hidden; }
+>>>>>>> 5e1bd94e84e505461bb43abfa16922a990e5192e
