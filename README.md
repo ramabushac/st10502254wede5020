@@ -5,7 +5,7 @@
 **Module:** WEDE5020  
 **Project:** Hope Connect Foundation Website  
 **Repository:** https://github.com/ramabushac/st10502254wede5020  
-**Live website:** https://ramabushac.github.io/st10502254wede5020/ *(update this link if the site is deployed elsewhere)*
+**Live website:** https://ramabushac.github.io/st10502254wede5020/ 
 
 ## Table of Contents
 
