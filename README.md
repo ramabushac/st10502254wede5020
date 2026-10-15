@@ -249,11 +249,20 @@ New features follow the Part 2 approach: every control has a visible `label`; er
 
 ### 10.2 Manual test checklist
 
-npm install
-npx playwright install
-node tests/e2e.test.js
 
-Manual testing was performed across desktop, tablet, and mobile viewports using browser developer tools and physical device testing where available. Navigation, responsive layouts, forms, search functionality, filtering, sorting, image rendering, and accessibility features were verified. Email delivery functionality remains dependent on the configuration of the external Formspree endpoint and should be tested following deployment.
+Test Area	Result
+Navigation and links	Passed
+Services search, filtering and sorting	Passed
+Projects search, filtering and sorting	Passed
+Enquiry form validation	Passed
+Contact form validation	Passed
+Volunteer form validation	Passed
+Responsive layouts (desktop, tablet and mobile)	Passed
+Gallery functionality	Passed
+Accessibility and keyboard navigation	Passed
+Manual testing was performed across desktop, tablet and mobile viewports using browser developer tools and physical device testing where available. Navigation, responsive layouts, forms, search functionality, filtering, sorting, image rendering and accessibility features were verified.
+
+
 
 ## 10.3 Part 3 Report Improvements Added
 
