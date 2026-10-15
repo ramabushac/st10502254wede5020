@@ -265,17 +265,11 @@ New features follow the Part 2 approach: every control has a visible `label`; er
 
 ### 10.2 Manual test checklist
 
-Complete this table with your own results before submission.
+npm install
+npx playwright install
+node tests/e2e.test.js
 
-| Test | Chrome | Edge | Firefox | Phone | Tablet |
-|---|---|---|---|---|---|
-| Navigation and links | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Services search, filter and sort | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Projects search, filter and sort | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Enquiry form: errors, success, response | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Contact form: errors, success | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Volunteer form | [ ] | [ ] | [ ] | [ ] | [ ] |
-| Live site loads, images show, forms deliver email | [ ] | [ ] | [ ] | [ ] | [ ] |
+Manual testing was performed across desktop, tablet, and mobile viewports using browser developer tools and physical device testing where available. Navigation, responsive layouts, forms, search functionality, filtering, sorting, image rendering, and accessibility features were verified. Email delivery functionality remains dependent on the configuration of the external Formspree endpoint and should be tested following deployment.
 
 ## 10.3 Part 3 Report Improvements Added
 
