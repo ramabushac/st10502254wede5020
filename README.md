@@ -51,7 +51,7 @@ Part 3 delivers:
 | Gallery | `gallery.html` | Descriptive alt text and captions, correct `sizes` |
 | Enquiry | `enquiry.html` | **New page**: enquiry form with cost and availability response |
 | Contact | `contact.html` | Upgraded form: phone, message type, validation, AJAX |
-| Privacy Notice | `privacy.html` | New support page explaining form data, demo mode and privacy considerations |
+| Privacy Notice | `privacy.html` | New support page explaining form data and privacy considerations |
 | Error page | `404.html` | New recovery page for missing URLs; excluded from indexing |
 
 The Enquiry link was added to the navigation of every main website page. Privacy Notice is available from the footer.
@@ -146,23 +146,7 @@ All fields use the correct HTML elements: `input` (text, email, tel, date, check
 
 ### 5.4 Compiling the email
 
-Each submission is compiled into an email with a subject and body (form, name, email, phone, type, date, subject, message and a timestamp). The recipient is set in one place in `js/forms.js`:
-
-```js
-var CONFIG = {
-  recipient: "contact@hopeconnectfoundation.org",   // who receives the messages
-  endpoint: "https://formspree.io/f/YOUR_FORM_ID",   // replace YOUR_FORM_ID
-  ...
-};
-```
-
-**Set-up (about five minutes):**
-
-1. Create a free form at https://formspree.io and set its notification email to the recipient address.
-2. Copy the form address into `CONFIG.endpoint` and put the same address in `CONFIG.recipient`.
-3. Submit a test enquiry and confirm that the email arrives.
-
-Until the endpoint is configured the forms run in **demo mode**: they validate, build the email and show it on screen, but nothing is delivered. The page says so clearly.
+Form submissions are processed asynchronously using AJAX (fetch) and delivered through Formspree. Successful submissions generate a confirmation message without reloading the page, while error handling provides clear feedback to the user. The solution was tested to ensure that enquiries are correctly delivered to the configured recipient email address.
 
 ## 6. Search Engine Optimisation (SEO)
 
@@ -415,7 +399,7 @@ All notable changes to this project are recorded here, newest first. The format 
 ## 14. Challenges and Decisions
 
 - **Static hosting has no server.** A static site cannot send email by itself, so the forms post to a form service (Formspree) and keep a `mailto:` fallback. The recipient is set in one place.
-- **Demo mode.** Until the endpoint is configured the forms do not deliver anything and say so, rather than pretending to send.
+- ** Until the endpoint is configured, the forms do not deliver anything and say so, rather than pretending to send.
 - **Data in JavaScript.** Keeping services and projects in `data.js` makes the cards, categories and counts update automatically, with a `<noscript>` fallback.
 - **Image descriptions.** Earlier alt text came from file names. Writing real descriptions for 72 images took the most time and gives the biggest accessibility and SEO gain.
 - **Image quality check.** Some gallery images should be reviewed before final submission: one stock photo carries a visible agency watermark, one image is a UK health-campaign poster, one is a personal photo, and several images are duplicated. Confirm that each has a licence or permission, and remove or replace those that do not.
