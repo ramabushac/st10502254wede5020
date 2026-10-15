@@ -408,7 +408,7 @@ All notable changes to this project are recorded here, newest first. The format 
 ## 14. Challenges and Decisions
 
 - **Static hosting has no server.** A static site cannot send email by itself, so the forms post to a form service (Formspree) and keep a `mailto:` fallback. The recipient is set in one place.
-- ** Form submissions are handled through Formspree, which enables email delivery for a static website deployment.s.
+- ** Form submission service: Form submissions are handled through Formspree, which enables email delivery for a static website deployment while maintaining the simplicity of static hosting.
 - **Data in JavaScript.** Keeping services and projects in `data.js` makes the cards, categories and counts update automatically, with a `<noscript>` fallback.
 - **Image descriptions.** Earlier alt text came from file names. Writing real descriptions for 72 images took the most time and gives the biggest accessibility and SEO gain.
 - **Image quality check.** Some gallery images should be reviewed before final submission: one stock photo carries a visible agency watermark, one image is a UK health-campaign poster, one is a personal photo, and several images are duplicated. Confirm that each has a licence or permission, and remove or replace those that do not.
