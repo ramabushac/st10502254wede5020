@@ -30,7 +30,7 @@
 
 ## 1. Project Overview
 
-Hope Connect Foundation is a non-profit organisation website developed for the WEDE5020 module. Part 1 produced the structure and content, Part 2 added the external stylesheet, responsive design and accessibility, and **Part 3 adds interactivity, search engine optimisation and working forms**.
+The project was developed across three phases. Part 1 focused on creating the website structure and content, Part 2 improved the design through responsive styling and accessibility enhancements, and Part 3 introduced interactive features, improved SEO, and functional forms.
 
 Part 3 delivers:
 
