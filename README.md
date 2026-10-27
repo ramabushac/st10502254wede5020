@@ -108,8 +108,6 @@ st10502254wede5020/
 
 To add a service or project, add one object to `js/data.js`. The cards, categories and counts update by themselves.
 
-> The costs and availability in `js/data.js` are sample figures for this assignment. Replace them with the organisation's real details.
-
 ## 5. Forms, Validation and AJAX
 
 ### 5.1 Forms
