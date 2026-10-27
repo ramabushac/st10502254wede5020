@@ -199,8 +199,6 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 - **`sitemap.xml`** lists all eight pages with `lastmod`, `changefreq` and `priority`.
 - Run `python tools/set_site_url.py https://your-site-address/` to update the canonical tags, sitemap and robots file when the final address is known.
 
-> Search engines only read `robots.txt` at the root of a domain. A project page on GitHub Pages (`username.github.io/repository/`) is served below the root, so on GitHub Pages the file is present but ignored by crawlers. Deploying to Netlify, where the site is served from the root, avoids this.
-
 ### 6.5 Image file names
 
 All 72 original images and their 192 resized copies in `images/responsive/` now have descriptive names, for example `hope-connect-volunteers-sorting-donated-goods-boxes-large.jpg`. The renaming was done with `tools/rename_images.py`, which also updated every reference in the HTML, CSS and README files; the script then confirmed that every referenced image exists. The script is kept for reference and runs as a dry run unless `--apply` is given.
