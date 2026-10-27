@@ -193,8 +193,6 @@ Keywords were chosen from the organisation's real focus areas and the phrases a 
 | Social media | Every page has Share links for Facebook, WhatsApp, LinkedIn and X. Plan: post each project and volunteer day with a photo, a short story and a link to `enquiry.html` or `get-involved.html`. |
 | Local SEO | Titles, descriptions, language (`en_ZA`) and the structured data target South Africa. Next steps: add the organisation's street address and a correct phone number to the Contact page, claim a Google Business Profile with identical name, address and phone details, and ask partners for local reviews. |
 
-> Backlinks and social posts depend on actions outside the code. Record the real links and posts here once they exist.
-
 ### 6.4 Technical SEO files
 
 - **`robots.txt`** allows all crawlers, blocks `/tools/` and `/wireframes/`, and points to the sitemap.
